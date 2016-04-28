@@ -111,8 +111,6 @@ $('#mysearch').submit(function(e) {
   e.preventDefault();
   var inputVal = $('.searchbox-input').val();
   if (inputVal in current_search_results) {
-    console.log("find the object!!")
-    console.log("http://localhost:9000/describe/?url="+current_search_results[inputVal])
     $('#virtuosoiframe').attr('src', "http://localhost:9000/describe/?url="+current_search_results[inputVal])
     $("#main_tabs a[href='#browse']").tab("show");
     $('.searchbox-input').val('');
