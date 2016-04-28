@@ -128,8 +128,7 @@
       <name>MOLD</name>
       <abbreviation>mold</abbreviation>
       <description>Model Organism Linked Database.</description>
-      <!-- <endpointURI>http://mold.org</endpointURI> -->
-      <endpointURI>http://localhost:9000</endpointURI>
+      <endpointURI>http://mo-ld.org:9000</endpointURI>
       <dontAppendSPARQL>false</dontAppendSPARQL>
       <defaultGraphURI></defaultGraphURI>
       <isVirtuoso>true</isVirtuoso>

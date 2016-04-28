@@ -1,8 +1,16 @@
+/* host */
+var host=window.location.hostname;
+var virtuoso_url = "http://" + host + ":9000"
+var sparql_url = virtuoso_url + "/sparql";
+var fct_url = virtuoso_url + "/fct";
+var describe_url = virtuoso_url + "/describe";
+var api_url = "http://" + host + ":9393";
+
 /* YASQE & YASR SPARQL */
 var yasqe = YASQE(document.getElementById("yasqe"), {
   sparql: {
     showQueryButton: true,
-    endpoint: "http://localhost:9000/sparql",
+    endpoint: sparql_url,
     requestMethod: "GET"
   }
 });
@@ -18,6 +26,7 @@ yasqe.options.sparql.callbacks.complete = yasr.setResponse;
 //    first tab is query the move to about tab
 $(document).ready(function(){
   $("#main_tabs a[href='#about']").tab("show");
+  $('#virtuosoiframe').attr('src', fct_url);
 })
 
 /* HEADER fun */
@@ -76,7 +85,7 @@ function buttonUp(){
     if(inputValLen > 3){
 
       current_ajax_call = $.ajax({
-        url: 'http://localhost:9393/v1/search?q=' + inputVal,
+        url: api_url + '/v1/search?q=' + inputVal,
         type: 'GET',
         dataType: 'json',
         beforeSend : function()    {           
@@ -106,12 +115,11 @@ function buttonUp(){
   }
 }
 
-
 $('#mysearch').submit(function(e) {
   e.preventDefault();
   var inputVal = $('.searchbox-input').val();
   if (inputVal in current_search_results) {
-    $('#virtuosoiframe').attr('src', "http://localhost:9000/describe/?url="+current_search_results[inputVal])
+    $('#virtuosoiframe').attr('src', describe_url+"/?url="+current_search_results[inputVal])
     $("#main_tabs a[href='#browse']").tab("show");
     $('.searchbox-input').val('');
     hideHeader();
