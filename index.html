@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>MOLD</title>
+    <meta name="author" content="whois" charset="utf-8">
+    <link rel="icon" type="image/png" href="img/mold-ico.png">
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet"/>
+    <link href="css/awesomplete.css" rel="stylesheet"/>
+    
+    <script src="js/awesomplete.min.js" async></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      window.paceOptions = {
+        ajax: false, 
+        eventLag: false
+      };
+    </script>
+    <script src="js/pace.min.js"></script>
+    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    
+  </head>
+  
+  <body>
+    
+    <div id="header" onclick="hideHeader()">
+      <h2 style="text-align: center">
+	<img src="img/mold-logo.png" width="200px">
+      </h2>    
+      <p style="text-align: center;">
+	The Model Organism Linked Database
+      </p>
+      <br>
+    </div>
+    
+    <div class="container">
+
+      <ul class="nav nav-tabs" style="text-align:right;" id="main_tabs">
+	<li class="span-nav-left">
+	  <button id="logo-btn" type="button" class="btn btn-default" aria-label="Left Align" onclick="toggleHeader();" >
+	    <img src="img/mold-logo.png" width="80px" height="30px;">
+	  </button>
+	</li>
+	
+	<li><a data-toggle="tab" href="#about" onclick="showHeader()">About</a></li>
+	<li class="active"><a data-toggle="tab" href="#query" onclick="hideHeader()">Query</a></li>
+	<li><a data-toggle="tab" href="#browse" onclick="hideHeader()">Browse</a></li>
+	<li><a data-toggle="tab" href="#relfinder" onclick="hideHeader()">Relfinder</a></li>
+	<li style="margin-right: 30px !important;"><a data-toggle="tab" href="#api" onclick="hideHeader()">API</a></li>
+	
+	<li class="span-nav-right">
+	  <div id="sb-search" class="sb-search">
+	    <form class="searchbox" id="mysearch">
+              <input id="myinput" placeholder="Quick Search.." name="search" class="searchbox-input" onkeyup="buttonUp();" autocomplete="off" required />
+	      <input type="submit" class="searchbox-submit" value="" style="background-image: url(img/search-ico-submit.png); border: solid 0px #000000; background-repeat: no-repeat; width:40px; height:30px;">
+              <span class="searchbox-icon"><img src="img/search-ico.png"/></span>
+	    </form>
+	  </div>
+	</li>
+	
+      </ul>
+      
+      
+      <div class="tab-content">
+	
+	<div id="about"
+	     class="tab-pane fade"
+	     style="padding:25px;">
+	  
+	  <dl class="dl-horizontal">	      
+	    <dt><u>About</u></dt>
+	    <dd>
+	      MOLD is an effort to publish Model Organism Data as 5 &#9733; Open Linked Data.
+	      The primary data sources are the respective organism <a href="http://intermine.org">Intermine</a> endpoint, but
+	      MOLD also linked with other LOD endpoints from <a href="http://bio2rdf.org">Bio2RDF</a> and reuse ontologies such as <a href="http://geneontology.org/">Gene Ontology (GO)</a> and <a href="http://www.sequenceontology.org/">Sequence Ontology (SO)</a>.
+	    </dd>
+	    
+	    <br>	      
+
+	    <dt><u>Social activity</u></dt>
+	    <dd></dd>
+	    
+	    <dt> <b>Code</b>  </dt>
+	    <dd> <a href="https://github.com/mo-ld">https://github.com/mo-ld</a> </dd>
+	    <dt> <b>Docker</b> </dt>
+	    <dd><a href="https://hub.docker.com/u/mold/">https://hub.docker.com/u/mold/</a></dd> 
+	    <dt> <b>Forum</b> </dt>
+	    <dd><a href="https://groups.google.com/forum/#!forum/mo-ld">https://groups.google.com/forum/#!forum/mo-ld</a></dd>
+	    <br>
+	    
+	    <dt><u>Model Organisms</u></dt>
+	    <dd></dd>
+	    
+	    <dt> Yeast </dt>
+	    <dd>Saccharomyces cerevisiae is a species of yeast. It is perhaps the most useful yeast, having been instrumental to winemaking, baking, and brewing since ancient times. It is believed to have been originally isolated from the skin of grapes (one can see the yeast as a component of the thin white film on the skins of some dark-color fruits such as plums; it exists among the waxes of the cuticle). (source: <a href="http://dbpedia.org/page/Saccharomyces_cerevisiae">dbpedia</a> ) <br>
+	      <b>Yeatmine:</b> <a href="http://yeastmine.yeastgenome.org">http://yeastmine.yeastgenome.org</a>
+	    </dd>
+	    
+	    <!-- <dt> Worm </dt> -->
+	    <!-- <dd>Caenorhabditis elegans /ˌseɪnɵræbˈdɪtɪs ˈɛlɛɡænz/ is a free-living (not parasitic), transparent nematode (roundworm), about 1 mm in length, that lives in temperate soil environments. The name is a blend of Greek (caeno- - recent, rhabditis - rod-like) and Latin (elegans - elegant). In 1900, Maupas initially named it Rhabditides elegans, Osche placed it in the subgenus Caenorhabditis in 1952, and in 1955, Dougherty raised it to the status of genus.C. (source: <a href="http://dbpedia.org/page/Caenorhabditis_elegans"> dbpedia</a> ) <br> -->
+	    <!--   <b>WormMine:</b> <a href="http://intermine.wormbase.org/">http://intermine.wormbase.org/</a> -->
+	    <!-- </dd> -->
+	    
+	    <dt> Zebrafish </dt>
+	    <dd>The zebrafish (Danio rerio) is a tropical freshwater fish belonging to the minnow family (Cyprinidae) of the order Cypriniformes. Native to the Himalayan region, it is a popular aquarium fish, frequently sold under the trade name zebra danio. The zebrafish is also an important and widely-used vertebrate model organism in scientific research, and was the first vertebrate to be cloned. (source: <a href="http://dbpedia.org/page/Zebrafish">dbpedia</a> ) <br>
+	      <b>Zebrafishmine:</b> <a href="http://www.zebrafishmine.org/">http://www.zebrafishmine.org/</a>
+	    </dd>
+	    
+	    <dt>Fly</dt>
+	    <dd>Drosophila melanogaster is a species of fly (the taxonomic order Diptera) in the family Drosophilidae. The species is known generally as the common fruit fly or vinegar fly. Starting with Charles W. Woodworth's proposal of the use of this species as a model organism, D. melanogaster continues to be widely used for biological research in studies of genetics, physiology, microbial pathogenesis, and life history evolution. (source: <a href="http://dbpedia.org/page/Drosophila_melanogaster">dbpedia</a> ) <br>
+	      <b>Flymine:</b> <a href="http://www.flymine.org/">http://www.flymine.org/</a>
+	    </dd>
+	    
+	    <dt>Rat</dt>
+	    <dd>The brown rat, also referred to as common rat, street rat, sewer rat, Hanover rat, Norway rat, brown Norway rat, Norwegian rat, or wharf rat (Rattus norvegicus) is one of the best known and most common rats.One of the largest muroids, it is a brown or grey rodent with a body up to 25 cm (10 in) long, and a similar tail length; the male weighs on average 350 g (12 oz) and the female 250 g (9 oz). (source: <a href="http://dbpedia.org/page/Brown_rat">dbpedia</a> ) <br>
+	      <b>Ratmine:</b> <a href="http://www.ratmine.org/">http://www.ratmine.org/</a>
+	    </dd>
+	    
+	    <dt>Mouse</dt>
+	    <dd>The house mouse (Mus musculus) is a small mammal of the order Rodentia, characteristically having a pointed snout, small rounded ears, and a long naked or almost hairless tail. It is one of the most numerous species of the genus Mus. Although a wild animal, the house mouse mainly lives in association with humans.The house mouse has been domesticated as the pet or fancy mouse, and as the laboratory mouse, which is one of the most important model organisms in biology and medicine. (source: <a href="http://dbpedia.org/page/House_mouse">dbpedia</a> ) <br>
+	      <b>Mousemine:</b> <a href="http://www.mousemine.org/mousemine/">http://www.mousemine.org/mousemine/</a>
+	    </dd>
+	    
+	    <dt>Human</dt>
+	    <dd>Homo sapiens (Latin: "wise man") is the binomial nomenclature (also known as the scientific name) for the human species. Homo is the human genus, which also includes Neanderthals and many other extinct species of hominid; H. sapiens is the only surviving species of the genus Homo. Modern humans are the subspecies Homo sapiens sapiens, which differentiates them from what has been argued to be their direct ancestor, Homo sapiens idaltu. (source: <a href="http://dbpedia.org/page/Homo_sapiens">dbpedia</a> ) <br>
+	      <b>Humanmine:</b> <a href="http://www.humanmine.org/">http://www.humanmine.org/</a>
+	    </dd>
+
+	  </dl>
+	  
+	</div>
+	
+	<div id="query" class="tab-pane fade in active">
+	  <div style="height:40px; margin-top: 5px;">
+	    
+	    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#queryexample">Query Example</button>
+	    
+	    <!-- Modal -->
+	    <div id="queryexample" class="modal fade" role="dialog">
+	      <div class="modal-dialog">
+		
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal">&times;</button>
+		    <h4 class="modal-title">Modal Header</h4>
+		  </div>
+		  <div class="modal-body">
+		    <p>Some text in the modal.</p>
+		  </div>
+		  <div class="modal-footer">
+		    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+		
+	      </div>
+	    </div>
+	    
+	  </div>
+	  
+	  <!-- <div id="queryer"></div> -->
+	  <div id="yasqe"></div>
+	  <div id="yasr"></div>
+	  
+	</div>
+	
+	<div id="browse" class="tab-pane fade">
+	  <iframe id="virtuosoiframe" src="//0.0.0.0:9000/fct" style="width:100%;height:800px;border:0px;"></iframe>
+	</div>
+
+	<div id="relfinder" class="tab-pane fade">
+          <iframe id="relfinderiframe" src="relfinder.html" style="width:100%;height:800px;border:0px;"></iframe>
+	</div>
+	
+	<div id="api" class="tab-pane fade">
+	  <iframe id="swaggeriframe" src="swagger-api.html" style="width:100%;height:800px;border:0px;"></iframe>
+	</div>
+	
+      </div>
+      
+    </div>
+    
+    
+    <!-- YASGUI lib -->
+    <script src="js/codemirror.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/pivot.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/d3_renderers.min.js"></script>
+    <script src="js/gchart_renderers.min.js"></script>
+    <link href="css/yasqe.min.css" rel="stylesheet">
+    <script src="js/yasqe.bundled.min.js"></script>
+    <link href="css/yasr.min.css" rel="stylesheet">
+    <script src="js/yasr.min.js"></script>
+    
+    <script src="js/main.js"></script>
+    
+  </body>
+  
+</html>
