@@ -219,3 +219,13 @@ var refreshAbout = function() {
   showHeader()
   window.setTimeout(function (){  load_mold_network() }, 500);
 }
+
+var stickyOffset = $('.sticky').offset().top;
+
+$(window).scroll(function(){
+  var sticky = $('.sticky'),
+      scroll = $(window).scrollTop();
+
+  if (scroll >= stickyOffset) sticky.addClass('fixed');
+  else sticky.removeClass('fixed');
+});
