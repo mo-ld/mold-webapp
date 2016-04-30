@@ -204,6 +204,8 @@ var load_mold_network = function(){
 
 };
 
+
+
 // hack to load yasqe correctly :
 //    first tab is query the move to about tab
 $(document).ready(function(){
@@ -212,3 +214,8 @@ $(document).ready(function(){
   load_search();
   window.setTimeout(function (){  load_mold_network() }, 500);
 })
+
+var refreshAbout = function() {
+  showHeader()
+  window.setTimeout(function (){  load_mold_network() }, 500);
+}
