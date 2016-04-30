@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gexf.net/1.3" version="1.3" xmlns:viz="http://www.gexf.net/1.3/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.3 http://www.gexf.net/1.3/gexf.xsd">
+  <meta lastmodifieddate="2016-04-29">
+    <creator>Gephi 0.9</creator>
+    <description></description>
+  </meta>
+  <graph defaultedgetype="directed" mode="static">
+    <nodes>
+      <node id="mouse" label="mouse">
+        <viz:size value="45.0"></viz:size>
+        <viz:position x="129.67894" y="20.772831"></viz:position>
+        <viz:color r="255" g="153" b="153"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/panther" label="panther">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="78.81787" y="77.98876"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="human" label="human">
+        <viz:size value="45.0"></viz:size>
+        <viz:position x="-16.955023" y="93.473366"></viz:position>
+        <viz:color r="255" g="255" b="153"></viz:color>
+      </node>
+      <node id="rat" label="rat">
+        <viz:size value="45.0"></viz:size>
+        <viz:position x="134.95317" y="84.05861"></viz:position>
+        <viz:color r="255" g="153" b="255"></viz:color>
+      </node>
+      <node id="zebrafish" label="zebrafish">
+        <viz:size value="45.0"></viz:size>
+        <viz:position x="60.350727" y="-82.87797"></viz:position>
+        <viz:color r="153" g="153" b="255"></viz:color>
+      </node>
+      <node id="fly" label="fly">
+        <viz:size value="45.0"></viz:size>
+        <viz:position x="-79.03382" y="44.874565"></viz:position>
+        <viz:color r="153" g="204" b="255"></viz:color>
+      </node>
+      <node id="yeast" label="yeast">
+        <viz:size value="45.0"></viz:size>
+        <viz:position x="106.50135" y="151.44603"></viz:position>
+        <viz:color r="153" g="255" b="153"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/refseq" label="refseq">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-15.064054" y="-5.1354513"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/genbank" label="genbank">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="170.38947" y="-100.17638"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/pubmed" label="pubmed">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="282.08447" y="79.52305"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/ncbigene" label="ncbigene">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="32.30408" y="15.781326"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/ensembl" label="ensembl">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="30.903978" y="65.58121"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/vega" label="vega">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="75.48119" y="3.4990718"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/uniprot" label="uniprot">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="175.67029" y="-23.991943"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/hgnc" label="hgnc">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="6.1752996" y="38.68311"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/homologene" label="homologene">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="281.2059" y="-38.3196"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/unigene" label="unigene">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-5.315646" y="-45.6741"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/omim" label="omim">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="22.994493" y="-20.534727"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/biogrid" label="biogrid">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="58.811386" y="179.3426"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/ec" label="ec">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="184.73912" y="16.062351"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/pdb" label="pdb">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="292.97046" y="21.567783"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/mirbase" label="mirbase">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-168.7063" y="199.5548"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/go" label="go">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="62.954338" y="41.874947"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/mp" label="mp">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="83.58909" y="-28.101295"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/so" label="so">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="64.12597" y="108.41023"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/mi" label="mi">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="33.403965" y="129.83885"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/hprd" label="hprd">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-30.887175" y="167.41467"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/pfam" label="pfam">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-62.989685" y="-58.12289"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/pirsf" label="pirsf">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-172.29268" y="105.492935"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/prints" label="prints">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-141.41716" y="135.06049"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/hamap" label="hamap">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-151.54625" y="76.12687"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/superfamily" label="superfamily">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-176.28047" y="49.764465"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/prosite" label="prosite">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-80.814705" y="-26.932602"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/prodom" label="prodom">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-156.77159" y="14.878689"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/smart" label="smart">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-111.49137" y="166.45163"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/imgt" label="imgt">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="4.434403" y="180.98181"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/interpro" label="interpro">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="33.857433" y="-241.36757"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/mgi" label="mgi">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-10.796121" y="-230.5963"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/unists" label="unists">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="163.04445" y="-205.12108"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/flybase" label="flybase">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="119.973946" y="-232.39648"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/do" label="do">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="77.698296" y="-241.34106"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/rnacentral" label="rnacentral">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="241.13037" y="221.02321"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/tcdb" label="tcdb">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="154.28683" y="284.12543"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+      <node id="http://bio2rdf.org/eco" label="eco">
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="202.81717" y="260.054"></viz:position>
+        <viz:color r="255" g="200" b="0"></viz:color>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="412" source="mouse" target="http://bio2rdf.org/panther"></edge>
+      <edge id="413" source="human" target="http://bio2rdf.org/panther"></edge>
+      <edge id="414" source="rat" target="http://bio2rdf.org/panther"></edge>
+      <edge id="415" source="zebrafish" target="http://bio2rdf.org/panther"></edge>
+      <edge id="416" source="fly" target="http://bio2rdf.org/panther"></edge>
+      <edge id="417" source="yeast" target="http://bio2rdf.org/panther"></edge>
+      <edge id="418" source="mouse" target="http://bio2rdf.org/refseq"></edge>
+      <edge id="419" source="human" target="http://bio2rdf.org/refseq"></edge>
+      <edge id="420" source="zebrafish" target="http://bio2rdf.org/refseq"></edge>
+      <edge id="421" source="fly" target="http://bio2rdf.org/refseq"></edge>
+      <edge id="422" source="mouse" target="http://bio2rdf.org/genbank"></edge>
+      <edge id="423" source="zebrafish" target="http://bio2rdf.org/genbank"></edge>
+      <edge id="424" source="mouse" target="http://bio2rdf.org/pubmed"></edge>
+      <edge id="425" source="mouse" target="http://bio2rdf.org/ncbigene"></edge>
+      <edge id="426" source="human" target="http://bio2rdf.org/ncbigene"></edge>
+      <edge id="427" source="zebrafish" target="http://bio2rdf.org/ncbigene"></edge>
+      <edge id="428" source="fly" target="http://bio2rdf.org/ncbigene"></edge>
+      <edge id="429" source="yeast" target="http://bio2rdf.org/ncbigene"></edge>
+      <edge id="430" source="mouse" target="http://bio2rdf.org/ensembl"></edge>
+      <edge id="431" source="human" target="http://bio2rdf.org/ensembl"></edge>
+      <edge id="432" source="zebrafish" target="http://bio2rdf.org/ensembl"></edge>
+      <edge id="433" source="fly" target="http://bio2rdf.org/ensembl"></edge>
+      <edge id="434" source="yeast" target="http://bio2rdf.org/ensembl"></edge>
+      <edge id="435" source="mouse" target="http://bio2rdf.org/vega"></edge>
+      <edge id="436" source="human" target="http://bio2rdf.org/vega"></edge>
+      <edge id="437" source="zebrafish" target="http://bio2rdf.org/vega"></edge>
+      <edge id="438" source="yeast" target="http://bio2rdf.org/vega"></edge>
+      <edge id="439" source="mouse" target="http://bio2rdf.org/uniprot"></edge>
+      <edge id="440" source="zebrafish" target="http://bio2rdf.org/uniprot"></edge>
+      <edge id="441" source="yeast" target="http://bio2rdf.org/uniprot"></edge>
+      <edge id="442" source="mouse" target="http://bio2rdf.org/hgnc"></edge>
+      <edge id="443" source="human" target="http://bio2rdf.org/hgnc"></edge>
+      <edge id="444" source="zebrafish" target="http://bio2rdf.org/hgnc"></edge>
+      <edge id="445" source="fly" target="http://bio2rdf.org/hgnc"></edge>
+      <edge id="446" source="yeast" target="http://bio2rdf.org/hgnc"></edge>
+      <edge id="447" source="mouse" target="http://bio2rdf.org/homologene"></edge>
+      <edge id="448" source="mouse" target="http://bio2rdf.org/unigene"></edge>
+      <edge id="449" source="human" target="http://bio2rdf.org/unigene"></edge>
+      <edge id="450" source="zebrafish" target="http://bio2rdf.org/unigene"></edge>
+      <edge id="451" source="fly" target="http://bio2rdf.org/unigene"></edge>
+      <edge id="452" source="mouse" target="http://bio2rdf.org/omim"></edge>
+      <edge id="453" source="human" target="http://bio2rdf.org/omim"></edge>
+      <edge id="454" source="zebrafish" target="http://bio2rdf.org/omim"></edge>
+      <edge id="455" source="fly" target="http://bio2rdf.org/omim"></edge>
+      <edge id="456" source="mouse" target="http://bio2rdf.org/biogrid"></edge>
+      <edge id="457" source="human" target="http://bio2rdf.org/biogrid"></edge>
+      <edge id="458" source="mouse" target="http://bio2rdf.org/ec"></edge>
+      <edge id="459" source="zebrafish" target="http://bio2rdf.org/ec"></edge>
+      <edge id="460" source="yeast" target="http://bio2rdf.org/ec"></edge>
+      <edge id="461" source="mouse" target="http://bio2rdf.org/pdb"></edge>
+      <edge id="462" source="human" target="http://bio2rdf.org/mirbase"></edge>
+      <edge id="463" source="mouse" target="http://bio2rdf.org/go"></edge>
+      <edge id="464" source="human" target="http://bio2rdf.org/go"></edge>
+      <edge id="465" source="rat" target="http://bio2rdf.org/go"></edge>
+      <edge id="466" source="zebrafish" target="http://bio2rdf.org/go"></edge>
+      <edge id="467" source="fly" target="http://bio2rdf.org/go"></edge>
+      <edge id="468" source="yeast" target="http://bio2rdf.org/go"></edge>
+      <edge id="469" source="mouse" target="http://bio2rdf.org/mp"></edge>
+      <edge id="470" source="human" target="http://bio2rdf.org/mp"></edge>
+      <edge id="471" source="rat" target="http://bio2rdf.org/mp"></edge>
+      <edge id="472" source="zebrafish" target="http://bio2rdf.org/mp"></edge>
+      <edge id="473" source="mouse" target="http://bio2rdf.org/so"></edge>
+      <edge id="474" source="human" target="http://bio2rdf.org/so"></edge>
+      <edge id="475" source="rat" target="http://bio2rdf.org/so"></edge>
+      <edge id="476" source="fly" target="http://bio2rdf.org/so"></edge>
+      <edge id="477" source="yeast" target="http://bio2rdf.org/so"></edge>
+      <edge id="478" source="mouse" target="http://bio2rdf.org/mi"></edge>
+      <edge id="479" source="human" target="http://bio2rdf.org/mi"></edge>
+      <edge id="480" source="rat" target="http://bio2rdf.org/mi"></edge>
+      <edge id="481" source="fly" target="http://bio2rdf.org/mi"></edge>
+      <edge id="482" source="yeast" target="http://bio2rdf.org/mi"></edge>
+      <edge id="483" source="human" target="http://bio2rdf.org/hprd"></edge>
+      <edge id="484" source="fly" target="http://bio2rdf.org/hprd"></edge>
+      <edge id="485" source="yeast" target="http://bio2rdf.org/hprd"></edge>
+      <edge id="486" source="human" target="http://bio2rdf.org/pfam"></edge>
+      <edge id="487" source="zebrafish" target="http://bio2rdf.org/pfam"></edge>
+      <edge id="488" source="fly" target="http://bio2rdf.org/pfam"></edge>
+      <edge id="489" source="human" target="http://bio2rdf.org/pirsf"></edge>
+      <edge id="490" source="fly" target="http://bio2rdf.org/pirsf"></edge>
+      <edge id="491" source="human" target="http://bio2rdf.org/prints"></edge>
+      <edge id="492" source="fly" target="http://bio2rdf.org/prints"></edge>
+      <edge id="493" source="human" target="http://bio2rdf.org/hamap"></edge>
+      <edge id="494" source="fly" target="http://bio2rdf.org/hamap"></edge>
+      <edge id="495" source="human" target="http://bio2rdf.org/superfamily"></edge>
+      <edge id="496" source="fly" target="http://bio2rdf.org/superfamily"></edge>
+      <edge id="497" source="human" target="http://bio2rdf.org/prosite"></edge>
+      <edge id="498" source="zebrafish" target="http://bio2rdf.org/prosite"></edge>
+      <edge id="499" source="fly" target="http://bio2rdf.org/prosite"></edge>
+      <edge id="500" source="human" target="http://bio2rdf.org/prodom"></edge>
+      <edge id="501" source="fly" target="http://bio2rdf.org/prodom"></edge>
+      <edge id="502" source="human" target="http://bio2rdf.org/smart"></edge>
+      <edge id="503" source="fly" target="http://bio2rdf.org/smart"></edge>
+      <edge id="504" source="human" target="http://bio2rdf.org/imgt"></edge>
+      <edge id="505" source="fly" target="http://bio2rdf.org/imgt"></edge>
+      <edge id="506" source="yeast" target="http://bio2rdf.org/imgt"></edge>
+      <edge id="507" source="zebrafish" target="http://bio2rdf.org/interpro"></edge>
+      <edge id="508" source="zebrafish" target="http://bio2rdf.org/mgi"></edge>
+      <edge id="509" source="zebrafish" target="http://bio2rdf.org/unists"></edge>
+      <edge id="510" source="zebrafish" target="http://bio2rdf.org/flybase"></edge>
+      <edge id="511" source="zebrafish" target="http://bio2rdf.org/do"></edge>
+      <edge id="512" source="yeast" target="http://bio2rdf.org/rnacentral"></edge>
+      <edge id="513" source="yeast" target="http://bio2rdf.org/tcdb"></edge>
+      <edge id="514" source="yeast" target="http://bio2rdf.org/eco"></edge>
+    </edges>
+  </graph>
+</gexf>

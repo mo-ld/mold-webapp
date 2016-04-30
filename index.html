@@ -23,7 +23,7 @@
     
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    
+
   </head>
   
   <body>
@@ -66,7 +66,7 @@
       </ul>
       
       
-      <div class="tab-content">
+      <div class="tab-content fade in active">
 	
 	<div id="about"
 	     class="tab-pane fade"
@@ -92,7 +92,14 @@
 	    <dt> <b>Forum</b> </dt>
 	    <dd><a href="https://groups.google.com/forum/#!forum/mo-ld">https://groups.google.com/forum/#!forum/mo-ld</a></dd>
 	    <br>
-	    
+
+
+	    <dt><u>MOLD Network</u></dt>
+	    <dd>
+	      <div id="mold_sigma"  style="height:600px; width:100%; margin 0;"></div>
+	    </dd>
+
+
 	    <dt><u>Model Organisms</u></dt>
 	    <dd></dd>
 	    
@@ -135,28 +142,30 @@
 
 	</div>
 	
+
 	<div id="query" class="tab-pane fade in active">
+	  
 	  <div style="height:40px; margin-top: 5px;">
 	    
 	    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#queryexample">Query Example</button>
-	    
+
 	    <!-- Modal -->
 	    <div id="queryexample" class="modal fade" role="dialog">
 	      <div class="modal-dialog">
 		
-		<!-- Modal content-->
-		<div class="modal-content">
-		  <div class="modal-header">
-		    <button type="button" class="close" data-dismiss="modal">&times;</button>
-		    <h4 class="modal-title">Modal Header</h4>
-		  </div>
-		  <div class="modal-body">
-		    <p>Some text in the modal.</p>
-		  </div>
-		  <div class="modal-footer">
-		    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		  </div>
-		</div>
+	  	<!-- Modal content-->
+	  	<div class="modal-content">
+	  	  <div class="modal-header">
+	  	    <button type="button" class="close" data-dismiss="modal">&times;</button>
+	  	    <h4 class="modal-title">Modal Header</h4>
+	  	  </div>
+	  	  <div class="modal-body">
+	  	    <p>Some text in the modal.</p>
+	  	  </div>
+	  	  <div class="modal-footer">
+	  	    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	  	  </div>
+	  	</div>
 		
 	      </div>
 	    </div>
@@ -166,7 +175,7 @@
 	  <!-- <div id="queryer"></div> -->
 	  <div id="yasqe"></div>
 	  <div id="yasr"></div>
-
+	  
 	</div>
 
 	<div id="browse" class="tab-pane fade">
@@ -184,8 +193,7 @@
       </div>
       
     </div>
-    
-    
+
     <!-- YASGUI lib -->
     <script src="js/codemirror.min.js"></script>
     <script src="js/jquery.dataTables.min.js"></script>
@@ -197,7 +205,11 @@
     <script src="js/yasqe.bundled.min.js"></script>
     <link href="css/yasr.min.css" rel="stylesheet">
     <script src="js/yasr.min.js"></script>
-    
+
+    <!-- SIGMA lib -->
+    <script src="js/sigma.min.js"></script>
+    <script src="js/sigma.parsers.gexf.min.js"></script>
+	
     <script src="js/main.js"></script>
     
   </body>
