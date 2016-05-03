@@ -1,10 +1,12 @@
 /* host */
 var host=window.location.hostname;
-var virtuoso_url = "http://" + host + ":9000"
+var full_url=window.location.href // test with port..
+var virtuoso_url = "http://" + host + ":9000" // TODO
+var api_url = "http://" + host + ":9393";     // TODO
 var sparql_url = virtuoso_url + "/sparql";
 var fct_url = virtuoso_url + "/fct";
 var describe_url = virtuoso_url + "/describe";
-var api_url = "http://" + host + ":9393";
+
 
 /* YASQE & YASR SPARQL */
 var yasqe = YASQE(document.getElementById("yasqe"), {
@@ -201,9 +203,7 @@ var load_mold_network = function(){
     }
   );
 
-
 };
-
 
 
 // hack to load yasqe correctly :
@@ -217,7 +217,7 @@ $(document).ready(function(){
 
 var refreshAbout = function() {
   showHeader()
-  window.setTimeout(function (){  load_mold_network() }, 500);
+  window.setTimeout(function (){  load_mold_network() }, 1000);
 }
 
 var stickyOffset = $('.sticky').offset().top;

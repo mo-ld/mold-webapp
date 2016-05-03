@@ -13,9 +13,10 @@
     <script src="js/awesomplete.min.js" async></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    
     <script type="text/javascript">
       window.paceOptions = {
-        ajax: false, 
+        ajax: false,
         eventLag: false
       };
     </script>
@@ -23,7 +24,10 @@
     
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
+    
+    
+    <script src="js/exquery.js"></script>
+    
   </head>
   
   <body>
@@ -31,7 +35,7 @@
     <div id="header" onclick="hideHeader()">
       <h2 style="text-align: center">
 	<img src="img/mold-logo.png" width="200px">
-      </h2>    
+      </h2>
       <p style="text-align: center;">
 	The Model Organism Linked Database
       </p>
@@ -39,14 +43,14 @@
     </div>
     
     <div class="container">
-
+      
       <ul class="nav nav-tabs sticky" style="text-align:right;" id="main_tabs">
 	<li class="span-nav-left">
 	  <button id="logo-btn" type="button" class="btn btn-default" aria-label="Left Align" onclick="toggleHeader();" >
 	    <img src="img/mold-logo.png" width="80px" height="30px;">
 	  </button>
 	</li>
-
+	
 	<li><a data-toggle="tab" href="#about" onclick="refreshAbout()">About</a></li>
 	<li class="active"><a data-toggle="tab" href="#query" onclick="hideHeader()">Query</a></li>
 	<li><a data-toggle="tab" href="#browse" onclick="hideHeader()">Browse</a></li>
@@ -65,14 +69,13 @@
 	
       </ul>
       
-      
       <div class="tab-content fade in active">
 	
 	<div id="about"
 	     class="tab-pane fade"
 	     style="padding:25px;">
 	  
-	  <dl class="dl-horizontal">	      
+	  <dl class="dl-horizontal">
 	    <dt><u>About</u></dt>
 	    <dd>
 	      MOLD is an effort to publish Model Organism Data as 5 &#9733; Open Linked Data.
@@ -80,8 +83,8 @@
               MOLD is also linked with other LOD datasets from <a href="http://bio2rdf.org">Bio2RDF</a> and reuses ontologies such as <a href="http://geneontology.org/">Gene Ontology (GO)</a> and <a href="http://www.sequenceontology.org/">Sequence Ontology (SO)</a>.
 	    </dd>
 	    
-	    <br>	      
-
+	    <br>
+	    
 	    <dt><u>Social activity</u></dt>
 	    <dd></dd>
 	    
@@ -92,14 +95,16 @@
 	    <dt> <b>Forum</b> </dt>
 	    <dd><a href="https://groups.google.com/forum/#!forum/mo-ld">https://groups.google.com/forum/#!forum/mo-ld</a></dd>
 	    <br>
-
-
+	    
+	    
 	    <dt><u>MOLD Network</u></dt>
 	    <dd>
-	      <div id="mold_sigma"  style="height:600px; width:100%; margin 0;"></div>
+	      <div class="loadingImg">
+		<div id="mold_sigma"  style="height:600px; width:100%; margin 0;"></div>
+	      </div>
 	    </dd>
-
-
+	    
+	    
 	    <dt><u>Model Organisms</u></dt>
 	    <dd></dd>
 	    
@@ -137,33 +142,85 @@
 	    <dd><i>Homo sapiens</i> (Latin: "wise man") is the binomial nomenclature (also known as the scientific name) for the human species. <i>Homo</i> is the human genus, which also includes Neanderthals and many other extinct species of hominid; <i>H. sapiens</i> is the only surviving species of the genus <i>Homo</i>. Modern humans are the subspecies <i>Homo sapiens sapiens</i>, which differentiates them from what has been argued to be their direct ancestor, <i>Homo sapiens idaltu</i>. (source: <a href="http://dbpedia.org/page/Homo_sapiens">dbpedia</a> ) <br>
 	      <b>HumanMine:</b> <a href="http://www.humanmine.org/">http://www.humanmine.org/</a>
 	    </dd>
-
+	    
 	  </dl>
-
+	  
 	</div>
 	
-
+	
 	<div id="query" class="tab-pane fade in active">
 	  
 	  <div style="height:40px; margin-top: 5px;">
 	    
 	    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#queryexample">Query Example</button>
-
+	    
 	    <!-- Modal -->
 	    <div id="queryexample" class="modal fade" role="dialog">
-	      <div class="modal-dialog">
+	      
+	      <div class="modal-dialog modal-lg">
 		
-	  	<!-- Modal content-->
-	  	<div class="modal-content">
-	  	  <div class="modal-header">
-	  	    <button type="button" class="close" data-dismiss="modal">&times;</button>
-	  	    <h4 class="modal-title">Modal Header</h4>
-	  	  </div>
-	  	  <div class="modal-body">
-	  	    <p>Some text in the modal.</p>
-	  	  </div>
-	  	  <div class="modal-footer">
-	  	    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal">&times;</button>
+		    <h4 class="modal-title" style="text-align:center"><b>Query Examples</b></h4>
+		  </div>
+		  <div class="modal-body">
+		    
+		    <div class="container-modal">
+		      
+		      <br>
+		      
+		      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			
+			<ol class="carousel-indicators">
+			  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			  <li data-target="#myCarousel" data-slide-to="1"></li>
+			  <li data-target="#myCarousel" data-slide-to="2"></li>
+			  <li data-target="#myCarousel" data-slide-to="3"></li>
+			</ol>
+			
+			<!-- Wrapper for slides TODO populate dynamically... -->
+			<div class="carousel-inner" role="listbox">
+			  
+			  <div class="item active" onclick="loadQuery('exquery-001')">
+			    <img src="img/spin.gif" onload="this.onload=null; this.src=loadImg('exquery-001');" width="460" height="345" />
+			    <div class="carousel-caption">
+			      <h3>Select Orthologous genes - yeast/human</h3>
+			      <p>This query will selected the orthologous genes between yeast and human via PantherDB.</p>
+			    </div>
+			  </div>
+			  
+			  <div class="item" onclick="loadQuery('exquery-002')">
+			    <img src="img/spin.gif" onload="this.onload=null; this.src=loadImg('exquery-002');" width="460" height="345" />
+			    <div class="carousel-caption">
+			      <h3>Federated Query</h3>
+			      <p>Federated Query with Bio2RDF:KEGG to fetch pathway information from mouse
+				genes annotated as GO:0019898 (extrinsic components of a cell membrane).</p>
+			    </div>
+			  </div>
+			  
+			</div>
+			
+			<!-- Left and right controls -->
+			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+			  <!-- <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> -->
+			  <span><h1>&lArr;</h1></span>
+			  <span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+			  <!-- <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> -->
+			  <span><h1>&rArr;</h1></span>
+			  <span class="sr-only">Next</span>
+			</a>
+		      </div>
+		    </div>
+		    
+		  </div>
+		  
+		  <div class="modal-footer">
+		    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	  	  </div>
 	  	</div>
 		
@@ -177,11 +234,11 @@
 	  <div id="yasr"></div>
 	  
 	</div>
-
+	
 	<div id="browse" class="tab-pane fade">
-	  <iframe id="virtuosoiframe" src="" style="width:100%;height:800px;border:0px;"></iframe>
+	  <iframe id="virtuosoiframe" src="" style="width:100%;height:800px;border:0px;"></iframe>	  
 	</div>
-
+	
 	<div id="relfinder" class="tab-pane fade">
           <iframe id="relfinderiframe" src="relfinder.html" style="width:100%;height:800px;border:0px;"></iframe>
 	</div>
@@ -193,7 +250,7 @@
       </div>
       
     </div>
-
+    
     <!-- YASGUI lib -->
     <script src="js/codemirror.min.js"></script>
     <script src="js/jquery.dataTables.min.js"></script>
@@ -205,11 +262,11 @@
     <script src="js/yasqe.bundled.min.js"></script>
     <link href="css/yasr.min.css" rel="stylesheet">
     <script src="js/yasr.min.js"></script>
-
+    
     <!-- SIGMA lib -->
     <script src="js/sigma.min.js"></script>
     <script src="js/sigma.parsers.gexf.min.js"></script>
-	
+    
     <script src="js/main.js"></script>
     
   </body>

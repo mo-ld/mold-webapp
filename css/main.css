@@ -5,7 +5,6 @@
     z-index: 50;
 }
 
-
 #logo-btn {
     background: white !important;
     border-radius: 0px !important;
@@ -323,4 +322,25 @@ body:not(.pace-done):after {
 }
 .byline a{
   text-decoration:none;
+}
+
+/* Caroussel Query examples */
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 80%;
+    margin: auto;
+}
+.carousel-caption {
+    position: relative;
+    color: black;
+    left: auto;
+    right: auto;
+}
+.carousel-caption p {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.loadingImg {
+    background: url('img/spin.gif') no-repeat;
 }
