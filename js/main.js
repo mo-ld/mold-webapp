@@ -1,8 +1,8 @@
 /* host */
 var host=window.location.hostname;
 var full_url=window.location.href
-var virtuoso_url = "http://vt" + host
-var api_url = "http://api" + host;
+var virtuoso_url = "http://vt." + host
+var api_url = "http://api." + host;
 var sparql_url = virtuoso_url + "/sparql";
 var fct_url = virtuoso_url + "/fct";
 var describe_url = virtuoso_url + "/describe";
