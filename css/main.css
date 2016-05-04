@@ -40,6 +40,8 @@ a {
     color: #8ca50b;
 }
 
+dt, dd { margin-top: 10px; }
+
 
 /* PACE */
 .pace {
