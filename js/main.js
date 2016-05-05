@@ -79,9 +79,6 @@ var autocomplete = new autoComplete({
           // list.push(value['l']['value']);
           suggestions.push([value['l']['value'],value['s']['value']])
         });
-        $( "#myinput" ).autocomplete({
-          source: list
-        });
       })
       .error(function(){
       })
