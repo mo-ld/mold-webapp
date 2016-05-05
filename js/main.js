@@ -42,70 +42,85 @@ var load_search = function() {
   searchBox.mouseup(function(){
     return false;
   });
-  $(document).mouseup(function(){
+  inputBox.mouseup(function(){
+    return false;
+  });
+  $(window).mouseup(function(){
     if(isOpen == true){
-      $('.searchbox-icon').css('display','block');
-      submitIcon.click();
+      searchBox.removeClass('searchbox-open');
+      inputBox.focusout();
+      isOpen = false;
     }
   });
 };
 
-var current_search_results = {}
-var current_ajax_call = null;
+var xhr = null;
 
-function buttonUp(){
+var autocomplete = new autoComplete({
+  // selector: '#myinput input[name=&quot;q&quot;]',
+  selector: '#myinput',
+  minChars: 1,
+  source: function(term, suggest){
 
-  var inputVal = $('.searchbox-input').val();
+    term = term.toLowerCase();
 
-  inputValLen = $.trim(inputVal).length;
+    try { xhr.abort(); } catch(e){}
+    var suggestions = [];
 
-  if( inputValLen !== 0){
-    $('.searchbox-icon').css('display','none');
-    if(inputValLen > 3){
-
-      current_ajax_call = $.ajax({
-        url: api_url + '/v1/search?q=' + inputVal,
-        type: 'GET',
-        dataType: 'json',
-        beforeSend : function()    {
-          if(current_ajax_call != null) {
-            current_ajax_call.abort();
-          }
-        },
+    xhr = $.ajax({
+      url: api_url + '/v1/search?q=' + term,
+      type: 'GET',
+      dataType: 'json'
+    })
+      .success(function(data) {
+        current_search_results={};
+        $.each(data['results']['bindings'], function(key,value) {
+          // current_search_results[value['l']['value']] = value['s']['value'];
+          // list.push(value['l']['value']);
+          suggestions.push([value['l']['value'],value['s']['value']])
+        });
+        $( "#myinput" ).autocomplete({
+          source: list
+        });
       })
-        .success(function(data) {
-          var list = [];
-          current_search_results={};
-          $.each(data['results']['bindings'], function(key,value) {
-            current_search_results[value['l']['value']] = value['s']['value'];
-            list.push(value['l']['value']);
-          });
-          $( "#myinput" ).autocomplete({
-            source: list
-          });
-        })
-        .error(function(){
-        })
-    }
+      .error(function(){
+      })
 
-  } else {
-    $('.searchbox-input').val('');
-    $('.searchbox-icon').css('display','block');
-  }
-}
+    // xhr = $.getJSON('/some/ajax/url/', { q: term }, function(data){ response(data); });
 
-$('#mysearch').submit(function(e) {
-  e.preventDefault();
-  var inputVal = $('.searchbox-input').val();
-  if (inputVal in current_search_results) {
-    $('#virtuosoiframe').attr('src', describe_url+"/?url="+current_search_results[inputVal])
+    // var choices = [['Australia', 'au'], ['Austria', 'at'], ['Brasil', 'br']];
+    // var suggestions = [];
+    // for (i=0;i<choices.length;i++)
+    //   if (~(choices[i][0]+' '+choices[i][1]).toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+
+    suggest(suggestions);
+  },
+  renderItem: function (item, search){
+
+    search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    var re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");
+    return '<div class="autocomplete-suggestion" data-uri="'+item[1]+'" data-label="'+item[0]+'" data-val="'+search+'>'+item[0].replace(re, "<b>$1</b>")+'</div>';
+
+    // return '<div class="autocomplete-suggestion" data-langname="'+item[0]+'" data-lang="'+item[1]+'" data-val="'+search+'"><img src="img/'+item[1]+'.png"> '+item[0].replace(re, "<b>$1</b>")+'</div>';
+
+  },
+
+
+  onSelect: function(e, term, item){
+
+    // alert('Item "'+item.getAttribute('data-langname')+' ('+item.getAttribute('data-lang')+')" selected by '+(e.type == 'keydown' ? 'pressing enter' : 'mouse click')+'.');
+    console.log(item.getAttribute('data-label'));
+    $('.searchbox-input').val(item.getAttribute('data-label'));
+    $('#virtuosoiframe').attr('src', describe_url+"/?url="+item.getAttribute('data-uri'))
     $("#main_tabs a[href='#browse']").tab("show");
-    $('.searchbox-input').val('');
     hideHeader();
-  } else {
-    console.log("no object found !! ") // TODO submit post to virtuoso
+    window.setTimeout(function (){
+      $('.searchbox-icon').click();
+    }, 1500);
+
   }
 });
+
 
 /* Network graph */
 // Add a method to the graph model that returns an

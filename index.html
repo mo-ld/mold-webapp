@@ -8,12 +8,11 @@
     
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet"/>
-    <link href="css/awesomplete.css" rel="stylesheet"/>
-    
-    <script src="js/awesomplete.min.js" async></script>
+
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    
+
+
     <script type="text/javascript">
       window.paceOptions = {
         ajax: false,
@@ -21,13 +20,15 @@
       };
     </script>
     <script src="js/pace.min.js"></script>
-    
+
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    
-    
+
+    <link href="vendors/JavaScript-autoComplete/auto-complete.css" rel="stylesheet"/>
+    <script src="vendors/JavaScript-autoComplete/auto-complete.js"></script>
+
     <script src="js/exquery.js"></script>
-    
+
   </head>
   
   <body>
@@ -50,23 +51,22 @@
 	    <img src="img/mold-logo.png" width="80px" height="30px;">
 	  </button>
 	</li>
-	
+
 	<li><a data-toggle="tab" href="#about" onclick="refreshAbout()">About</a></li>
 	<li class="active"><a data-toggle="tab" href="#query" onclick="hideHeader()">Query</a></li>
 	<li><a data-toggle="tab" href="#browse" onclick="hideHeader()">Browse</a></li>
 	<li><a data-toggle="tab" href="#relfinder" onclick="hideHeader()">Relfinder</a></li>
 	<li style="margin-right: 30px !important;"><a data-toggle="tab" href="#api" onclick="hideHeader()">API</a></li>
-	
+
 	<li class="span-nav-right">
 	  <div id="sb-search" class="sb-search">
-	    <form class="searchbox" id="mysearch">
-              <input id="myinput" placeholder="Quick Search.." name="search" class="searchbox-input" onkeyup="buttonUp();" autocomplete="off" required />
-	      <input type="submit" class="searchbox-submit" value="" style="background-image: url(img/search-ico-submit.png); border: solid 0px #000000; background-repeat: no-repeat; width:40px; height:30px;">
-              <span class="searchbox-icon"><img src="img/search-ico.png"/></span>
-	    </form>
+	    <div class="searchbox" id="mysearch">
+	      <input id="myinput" placeholder="Quick Search.." name="search" class="searchbox-input" autocomplete="off" required />
+	      <span class="searchbox-icon"><img src="img/search-ico.png"/></span>
+	    </div>
 	  </div>
 	</li>
-	
+
       </ul>
       
       <div class="tab-content fade in active">
