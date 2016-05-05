@@ -98,7 +98,8 @@ var autocomplete = new autoComplete({
 
     search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
     var re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");
-    return '<div class="autocomplete-suggestion" data-uri="'+item[1]+'" data-label="'+item[0]+'" data-val="'+search+'>'+item[0].replace(re, "<b>$1</b>")+'</div>';
+    // return '<div class="autocomplete-suggestion" data-uri="'+item[1]+'" data-label="'+item[0]+'" data-val="'+search+'>'+item[0].replace(re, "<b>$1</b>")+'</div>';
+    return '<div class="autocomplete-suggestion" data-uri="'+item[1]+'" data-label="'+item[0]+'" data-val="'+search+'>'+item[0]+'</div>';
 
     // return '<div class="autocomplete-suggestion" data-langname="'+item[0]+'" data-lang="'+item[1]+'" data-val="'+search+'"><img src="img/'+item[1]+'.png"> '+item[0].replace(re, "<b>$1</b>")+'</div>';
 
