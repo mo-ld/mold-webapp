@@ -55,71 +55,48 @@ var load_search = function() {
 };
 
 var xhr = null;
+var labels_uri = {}
 
 var autocomplete = new autoComplete({
-  // selector: '#myinput input[name=&quot;q&quot;]',
   selector: '#myinput',
   minChars: 1,
   source: function(term, suggest){
-
     term = term.toLowerCase();
-
     try { xhr.abort(); } catch(e){}
-    var suggestions = [];
-
     xhr = $.ajax({
       url: api_url + '/v1/search?q=' + term,
       type: 'GET',
       dataType: 'json'
     })
       .success(function(data) {
-        current_search_results={};
+        var choices = [];
+        labels_uri = {};
         $.each(data['results']['bindings'], function(key,value) {
           // current_search_results[value['l']['value']] = value['s']['value'];
-          // list.push(value['l']['value']);
-          suggestions.push([value['l']['value'],value['s']['value']])
+          // list.push(value['l']['value']);#
+          choices.push(value['l']['value'])
+          labels_uri[value['l']['value']] = value['s']['value'];
         });
-        suggest(suggestions);
+        if (choices.length > 0 && choices != []) {
+          var suggestions = [];
+          for (i=0;i<choices.length;i++)
+            if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+          suggest(suggestions);
+        }
       })
-      .error(function(){
-
-      })
-
-    // xhr = $.getJSON('/some/ajax/url/', { q: term }, function(data){ response(data); });
-
-    // var choices = [['Australia', 'au'], ['Austria', 'at'], ['Brasil', 'br']];
-    // var suggestions = [];
-    // for (i=0;i<choices.length;i++)
-    //   if (~(choices[i][0]+' '+choices[i][1]).toLowerCase().indexOf(term)) suggestions.push(choices[i]);
-
-    // suggest(suggestions);
+      .error(function(){ })
   },
-  renderItem: function (item, search){
-
-    search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-    var re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");
-    // return '<div class="autocomplete-suggestion" data-uri="'+item[1]+'" data-label="'+item[0]+'" data-val="'+search+'>'+item[0].replace(re, "<b>$1</b>")+'</div>';
-    return '<div class="autocomplete-suggestion" data-uri="'+item[1]+'" data-label="'+item[0]+'" data-val="'+search+'>'+item[0]+'</div>';
-
-    // return '<div class="autocomplete-suggestion" data-langname="'+item[0]+'" data-lang="'+item[1]+'" data-val="'+search+'"><img src="img/'+item[1]+'.png"> '+item[0].replace(re, "<b>$1</b>")+'</div>';
-
-  },
-
-
   onSelect: function(e, term, item){
-
-    // alert('Item "'+item.getAttribute('data-langname')+' ('+item.getAttribute('data-lang')+')" selected by '+(e.type == 'keydown' ? 'pressing enter' : 'mouse click')+'.');
-    console.log(item.getAttribute('data-label'));
-    $('.searchbox-input').val(item.getAttribute('data-label'));
-    $('#virtuosoiframe').attr('src', describe_url+"/?url="+item.getAttribute('data-uri'))
+    $('.searchbox-input').val(item.getAttribute('data-val'));
+    $('#virtuosoiframe').attr('src', describe_url+"/?url="+labels_uri[item.getAttribute('data-val')])
     $("#main_tabs a[href='#browse']").tab("show");
     hideHeader();
     window.setTimeout(function (){
       $('.searchbox-icon').click();
     }, 1500);
-
   }
 });
+
 
 
 /* Network graph */
