@@ -79,8 +79,10 @@ var autocomplete = new autoComplete({
           // list.push(value['l']['value']);
           suggestions.push([value['l']['value'],value['s']['value']])
         });
+        suggest(suggestions);
       })
       .error(function(){
+
       })
 
     // xhr = $.getJSON('/some/ajax/url/', { q: term }, function(data){ response(data); });
@@ -90,7 +92,7 @@ var autocomplete = new autoComplete({
     // for (i=0;i<choices.length;i++)
     //   if (~(choices[i][0]+' '+choices[i][1]).toLowerCase().indexOf(term)) suggestions.push(choices[i]);
 
-    suggest(suggestions);
+    // suggest(suggestions);
   },
   renderItem: function (item, search){
 
