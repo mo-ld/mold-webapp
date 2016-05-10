@@ -13,37 +13,69 @@
     </object>    
   </example>
   <example>
-    <endpoint>mold</endpoint>
+    <endpoint>dbp</endpoint>
     <object>
-      <label>Hexokinase</label>
-      <uri>http://mo-ld.org/yeastmine:1006888</uri>
+      <label>Saccharomyces cerevisiae</label>
+      <uri>http://dbpedia.org/resource/Saccharomyces_cerevisiae</uri>
     </object>
     <object>
       <label>Yeast</label>
-      <uri>http://mo-ld.org/mine_attribute:54563aa83e0ce613f9a7</uri>
-    </object>    
-  </example>
-  <example>
-    <endpoint>mold</endpoint>
-    <object>
-      <label>Hexokinase</label>
-      <uri>http://mo-ld.org/yeastmine:1006888</uri>
+      <uri>http://dbpedia.org/resource/Yeast</uri>
     </object>
-    <object>
-      <label>Yeast</label>
-      <uri>http://mo-ld.org/mine_attribute:54563aa83e0ce613f9a7</uri>
-    </object>    
   </example>
-
   <example>
     <endpoint>dbp</endpoint>
     <object>
-      <label>Albert Einstein</label>
-      <uri>http://dbpedia.org/resource/Albert_Einstein</uri>
+      <label>Danio</label>
+      <uri>http://dbpedia.org/resource/Danio</uri>
     </object>
     <object>
-      <label>Kurt Gödel</label>
-      <uri>http://dbpedia.org/resource/Kurt_G%C3%B6del</uri>
+      <label>Zebrafish</label>
+      <uri>http://dbpedia.org/resource/Zebrafish</uri>
+    </object>
+  </example>
+  <example>
+    <endpoint>dbp</endpoint>
+    <object>
+      <label>Drosophila melanogaster</label>
+      <uri>http://dbpedia.org/resource/Drosophila_melanogaster</uri>
+    </object>
+    <object>
+      <label>Fly</label>
+      <uri>http://dbpedia.org/resource/Fly</uri>
+    </object>
+  </example>
+  <example>
+    <endpoint>dbp</endpoint>
+    <object>
+      <label>Rattus Norvegicus</label>
+      <uri>http://dbpedia.org/resource/Rattus_Norvegicus</uri>
+    </object>
+    <object>
+      <label>Rat</label>
+      <uri>http://dbpedia.org/resource/Rat</uri>
+    </object>
+  </example>
+  <example>
+    <endpoint>dbp</endpoint>
+    <object>
+      <label>Mus musculus</label>
+      <uri>http://dbpedia.org/resource/Mus_musculus</uri>
+    </object>
+    <object>
+      <label>Mouse</label>
+      <uri>http://dbpedia.org/resource/Mouse</uri>
+    </object>
+  </example>
+  <example>
+    <endpoint>dbp</endpoint>
+    <object>
+      <label>Homo sapien</label>
+      <uri>http://dbpedia.org/resource/Homo_sapien</uri>
+    </object>
+    <object>
+      <label>Human</label>
+      <uri>http://dbpedia.org/resource/Human</uri>
     </object>
   </example>
 
