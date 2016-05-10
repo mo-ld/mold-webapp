@@ -1,225 +1,226 @@
 {
-    "swagger": "2.0",
-    "info": {
-        "title": "MOLD API v1",
-        "description": "REST API interface and documentation.",
-        "version": "1.0.0"
-    },
-    "host": "localhost:9393",
-    "schemes": [
-        "http"
-    ],
-    "basePath": "/v1",
-    "produces": [
-        "application/rdf+xml",
-        "application/json-ld",
-        "text/ntriples",
-        "text/tab-separated-values",
-        "text/csv"
-    ],
-    "paths": {
-        "/search": {
-            "get": {
-                "summary": "Search labels",
-                "description": "The Search endpoint returns a graph of URI resources, its namespace and the\nlables that had a potential hit from the kword search.\n",
-                "parameters": [
-                    {
-                        "name": "q",
-                        "in": "query",
-                        "description": "Keyword search",
-                        "required": true,
-                        "type": "string",
-                        "format": "string"
-                    }
-                ],
-                "tags": [
-                    "search"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "A graph of resources retrieved from the kwords query."
-                    },
-                    "default": {
-                        "description": "Unexpected error"
-                    }
-                }
-            }
-        },
-        "/describe": {
-            "get": {
-                "summary": "Describe URI",
-                "description": "The Describe endpoint returns a graph that describe a resource in RDF graph.\n",
-                "parameters": [
-                    {
-                        "name": "uri",
-                        "in": "query",
-                        "description": "URI to describe",
-                        "required": true,
-                        "type": "string",
-                        "format": "string"
-                    },
-                    {
-                        "name": "long",
-                        "in": "query",
-                        "description": "Either a short describe [0] (property attributes only) or a full describe (with ingoing/outgoing links) [1]",
-                        "required": false,
-                        "type": "integer",
-                        "format": "int32"
-                    },
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "return format (rdf/xml, ntriples, nquads, turtle, json-ld)",
-                        "type": "string",
-                        "format": "string"
-                    }
-                ],
-                "tags": [
-                    "describe"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success"
-                    },
-                    "default": {
-                        "description": "Unexpected error"
-                    }
-                }
-            }
-        },
-        "/inlinks": {
-            "get": {
-                "summary": "Get the incoming links",
-                "description": "The inlinks call will return a list of triples that target the input URI.\n",
-                "parameters": [
-                    {
-                        "name": "uri",
-                        "in": "query",
-                        "description": "URI to describe",
-                        "required": true,
-                        "type": "string",
-                        "format": "string"
-                    },
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "return format (rdf/xml, ntriples, nquads, turtle, json-ld)",
-                        "type": "string",
-                        "format": "string"
-                    }
-                ],
-                "tags": [
-                    "links"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success"
-                    },
-                    "default": {
-                        "description": "Unexpected error"
-                    }
-                }
-            }
-        },
-        "/outlinks": {
-            "get": {
-                "summary": "Get the outgoing links",
-                "description": "The outlinks call will return a list of triples that target the input URI.\n",
-                "parameters": [
-                    {
-                        "name": "uri",
-                        "in": "query",
-                        "description": "URI to describe",
-                        "required": true,
-                        "type": "string",
-                        "format": "string"
-                    },
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "return format (rdf/xml, ntriples, nquads, turtle, json-ld)",
-                        "type": "string",
-                        "format": "string"
-                    }
-                ],
-                "tags": [
-                    "links"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success"
-                    },
-                    "default": {
-                        "description": "Unexpected error"
-                    }
-                }
-            }
-        },
-        "/sparql": {
-            "get": {
-                "summary": "SPARQL GET",
-                "description": "SPARQL query either sent via a GET or POST\n",
-                "parameters": [
-                    {
-                        "name": "query",
-                        "in": "query",
-                        "description": "SPARQL",
-                        "required": true,
-                        "type": "string",
-                        "format": "string"
-                    },
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "return format (rdf/xml, ntriples, nquads, turtle, json-ld)",
-                        "type": "string",
-                        "format": "string"
-                    }
-                ],
-                "tags": [
-                    "sparql"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success"
-                    },
-                    "default": {
-                        "description": "Unexpected error"
-                    }
-                }
-            },
-            "post": {
-                "summary": "SPARQL POST",
-                "description": "SPARQL query either sent via a GET or POST\n",
-                "parameters": [
-                    {
-                        "name": "query",
-                        "in": "query",
-                        "description": "SPARQL",
-                        "required": true,
-                        "type": "string",
-                        "format": "string"
-                    },
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "return format (rdf/xml, ntriples, nquads, turtle, json-ld)",
-                        "type": "string",
-                        "format": "string"
-                    }
-                ],
-                "tags": [
-                    "sparql"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success"
-                    },
-                    "default": {
-                        "description": "Unexpected error"
-                    }
-                }
-            }
+  "swagger": "2.0",
+  "info": {
+    "title": "MOLD API v1",
+    "description": "REST API interface and documentation.",
+    "version": "1.0.0"
+  },
+  "host": "api.$HOST_NAME",
+  "schemes": [
+    "http"
+  ],
+  "basePath": "/v1",
+  "produces": [
+    "application/rdf+xml",
+    "application/json-ld",
+    "text/ntriples",
+    "text/tab-separated-values",
+    "text/csv"
+  ],
+  "paths": {
+    "/search": {
+      "get": {
+        "summary": "Search labels",
+        "description": "The Search endpoint returns a graph of URI resources, its namespace and the\nlables that had a potential hit from the kword search.\n",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Keyword search",
+            "required": true,
+            "type": "string",
+            "format": "string"
+          }
+        ],
+        "tags": [
+          "search"
+        ],
+        "responses": {
+          "200": {
+            "description": "A graph of resources retrieved from the kwords query."
+          },
+          "default": {
+            "description": "Unexpected error"
+          }
         }
+      }
+    },
+    "/describe": {
+      "get": {
+        "summary": "Describe URI",
+        "description": "The Describe endpoint returns a graph that describe a resource in RDF graph.\n",
+        "parameters": [
+          {
+            "name": "uri",
+            "in": "query",
+            "description": "URI to describe",
+            "required": true,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "long",
+            "in": "query",
+            "description": "Either a short describe [0] (property attributes only) or a full describe (with ingoing/outgoing links) [1]",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "return format (rdf/xml, ntriples, nquads, turtle, json-ld)",
+            "type": "string",
+            "format": "string"
+          }
+        ],
+        "tags": [
+          "describe"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "default": {
+            "description": "Unexpected error"
+          }
+        }
+      }
+    },
+    "/inlinks": {
+      "get": {
+        "summary": "Get the incoming links",
+        "description": "The inlinks call will return a list of triples that target the input URI.\n",
+        "parameters": [
+          {
+            "name": "uri",
+            "in": "query",
+            "description": "URI to describe",
+            "required": true,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "return format (rdf/xml, ntriples, nquads, turtle, json-ld)",
+            "type": "string",
+            "format": "string"
+          }
+        ],
+        "tags": [
+          "links"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "default": {
+            "description": "Unexpected error"
+          }
+        }
+      }
+    },
+    "/outlinks": {
+      "get": {
+        "summary": "Get the outgoing links",
+        "description": "The outlinks call will return a list of triples that target the input URI.\n",
+        "parameters": [
+          {
+            "name": "uri",
+            "in": "query",
+            "description": "URI to describe",
+            "required": true,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "return format (rdf/xml, ntriples, nquads, turtle, json-ld)",
+            "type": "string",
+            "format": "string"
+          }
+        ],
+        "tags": [
+          "links"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "default": {
+            "description": "Unexpected error"
+          }
+        }
+      }
+    },
+    "/sparql": {
+      "get": {
+        "summary": "SPARQL GET",
+        "description": "SPARQL query either sent via a GET or POST\n",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "description": "SPARQL",
+            "required": true,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "return format (rdf/xml, ntriples, nquads, turtle, json-ld)",
+            "type": "string",
+            "format": "string"
+          }
+        ],
+        "tags": [
+          "sparql"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "default": {
+            "description": "Unexpected error"
+          }
+        }
+      },
+      "post": {
+        "summary": "SPARQL POST",
+        "operationId": "sparqlPOST",
+        "description": "SPARQL query either sent via a GET or POST\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json+ld"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "SPARQL query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "sparql"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "default": {
+            "description": "Unexpected error"
+          }
+        }
+      }
     }
+  }
 }
