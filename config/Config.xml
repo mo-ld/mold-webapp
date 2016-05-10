@@ -128,11 +128,11 @@
       <name>MOLD</name>
       <abbreviation>mold</abbreviation>
       <description>Model Organism Linked Database.</description>
-      <endpointURI>http://mo-ld.org:9000</endpointURI>
+      <endpointURI>http://vt.mo-ld.org</endpointURI>
       <dontAppendSPARQL>false</dontAppendSPARQL>
       <defaultGraphURI></defaultGraphURI>
       <isVirtuoso>true</isVirtuoso>
-      <useProxy>false</useProxy>
+      <useProxy>true</useProxy>
       <method>POST</method>
       <autocompleteURIs>
         <autocompleteURI>http://www.w3.org/2000/01/rdf-schema#label</autocompleteURI>
