@@ -12,11 +12,14 @@
   "basePath": "/v1",
   "produces": [
     "application/rdf+xml",
-    "application/json-ld",
+    "application/json+ld",
     "application/json",
     "text/ntriples",
     "text/tab-separated-values",
-    "text/csv"
+    "text/csv",
+    "text/plain",
+    "text/turtle",
+    "text/html"
   ],
   "paths": {
     "/search": {
