@@ -5,7 +5,7 @@
     "description": "REST API interface and documentation.",
     "version": "1.0.0"
   },
-  "host": "api.$HOST_NAME",
+  "host": "api.$HOST_NAME:$HOST_PORT",
   "schemes": [
     "http"
   ],
