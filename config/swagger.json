@@ -73,7 +73,7 @@
           {
             "name": "format",
             "in": "query",
-            "description": "return format (rdf/xml, ntriples, nquads, turtle, json-ld)",
+            "description": "return format (rdf-xml, ntriples, turtle, json-ld)",
             "type": "string",
             "format": "string"
           }
@@ -107,7 +107,7 @@
           {
             "name": "format",
             "in": "query",
-            "description": "return format (rdf/xml, ntriples, nquads, turtle, json-ld)",
+            "description": "return format (rdf-xml, ntriples, turtle, json-ld)",
             "type": "string",
             "format": "string"
           }
@@ -141,7 +141,7 @@
           {
             "name": "format",
             "in": "query",
-            "description": "return format (rdf/xml, ntriples, nquads, turtle, json-ld)",
+            "description": "return format (rdf-xml, ntriples, turtle, json-ld)",
             "type": "string",
             "format": "string"
           }
@@ -175,7 +175,7 @@
           {
             "name": "format",
             "in": "query",
-            "description": "return format (rdf/xml, ntriples, nquads, turtle, json-ld)",
+            "description": "return format (rdf-xml, ntriples, turtle, json-ld)",
             "type": "string",
             "format": "string"
           }
@@ -200,7 +200,7 @@
           "application/json"
         ],
         "produces": [
-          "application/json+ld"
+          "application/json"
         ],
         "parameters": [
           {
