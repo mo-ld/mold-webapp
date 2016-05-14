@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Swagger UI</title>
-    
+
     <!-- SWAGGER lib -->
     <link href='css/swagger/typography.css' media='screen' rel='stylesheet' type='text/css'/>
     <link href='css/swagger/reset.css' media='screen' rel='stylesheet' type='text/css'/>
@@ -46,7 +46,7 @@
             if(window.SwaggerTranslator) {
               window.SwaggerTranslator.translate();
             }
-            
+
             $('pre code').each(function(i, e) {
               hljs.highlightBlock(e)
             });
@@ -63,7 +63,7 @@
         });
 
         window.swaggerUi.load();
-        
+
         function log() {
           if ('console' in window) {
             console.log.apply(console, arguments);
@@ -73,11 +73,11 @@
     </script>
 
   </head>
-  
+
   <body class="swagger-section">
 
     <div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
     <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
-    
+
   </body>
 </html>
