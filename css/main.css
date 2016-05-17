@@ -1,7 +1,7 @@
 .fixed {
     position: fixed;
-    top:0; right:0;
-    width: 100%;
+    top:0;
+    width: 1140px;
     z-index: 50;
     background-color:rgba(255, 255, 255, 0.8);
 }
@@ -30,12 +30,10 @@
 
 .span-nav-right {
     float: right !important;
-    margin-right: 25px;
 }
 
 .span-nav-left {
     float: left !important;
-    margin-left: 25px;
 }
 a {
     color: #8ca50b;
