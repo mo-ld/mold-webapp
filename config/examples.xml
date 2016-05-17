@@ -4,6 +4,28 @@
   <example>
     <endpoint>mold</endpoint>
     <object>
+      <label>Signaling by GPCR</label>
+      <uri>http://mo-ld.org/humanmine:40000079</uri>
+    </object>
+    <object>
+      <label>Drug Resistance, Neoplasm</label>
+      <uri>http://mo-ld.org/humanmine:50000304</uri>
+    </object>    
+  </example>
+  <example>
+    <endpoint>mold</endpoint>
+    <object>
+      <label>Interleukin-2</label>
+      <uri>http://mo-ld.org/humanmine:50000836</uri>
+    </object>
+    <object>
+      <label>Disease</label>
+      <uri>http://mo-ld.org/humanmine:40000246</uri>
+    </object>    
+  </example>
+  <example>
+    <endpoint>mold</endpoint>
+    <object>
       <label>Hexokinase</label>
       <uri>http://mo-ld.org/yeastmine:1006888</uri>
     </object>
