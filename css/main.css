@@ -2,8 +2,13 @@
     position: fixed;
     top:0;
     width: 1140px;
+    height: 44px;
     z-index: 50;
     background-color:rgba(255, 255, 255, 0.8);
+}
+
+.tab-pane {
+    margin-top: 45px;
 }
 
 #logo-btn {

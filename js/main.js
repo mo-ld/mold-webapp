@@ -90,7 +90,7 @@ var autocomplete = new autoComplete({
     $('.searchbox-input').val(item.getAttribute('data-val'));
     $('#virtuosoiframe').attr('src', describe_url+"/?url="+labels_uri[item.getAttribute('data-val')])
     $("#main_tabs a[href='#browse']").tab("show");
-    hideHeader();
+    // hideHeader();
     window.setTimeout(function (){
       $('.searchbox-icon').click();
     }, 1500);
@@ -190,7 +190,7 @@ $(document).ready(function(){
 
 var queryExecuted = false;
 var refreshAbout = function() {
-  showHeader()
+  // showHeader()
   // weird this timeout below and bool setting remove the glitch WebGL/SVG(d3)
   if (queryExecuted) {
     window.setTimeout(function (){
@@ -198,15 +198,6 @@ var refreshAbout = function() {
     }, 1000);
   }
 }
-
-/*sticky nav-bar*/
-var stickyOffset = $('.sticky').offset().top;
-$(window).scroll(function(){
-  var sticky = $('.sticky'),
-      scroll = $(window).scrollTop();
-  if (scroll >= stickyOffset) sticky.addClass('fixed');
-  else sticky.removeClass('fixed');
-});
 
 /* YASQE & YASR SPARQL */
 var yasqe = YASQE(document.getElementById("yasqe"), {

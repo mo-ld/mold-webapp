@@ -32,31 +32,24 @@
   </head>
   
   <body>
-    
-    <div id="header" onclick="hideHeader()">
-      <h2 style="text-align: center">
-	<img src="img/mold-logo.png" width="200px">
-      </h2>
-      <p style="text-align: center;">
-	The Model Organism Linked Database
-      </p>
-      <br>
-    </div>
-    
+
     <div class="container">
       
-      <ul class="nav nav-tabs sticky" style="text-align:right;" id="main_tabs">
+      <ul class="nav nav-tabs fixed" style="text-align:right;" id="main_tabs">
+
 	<li class="span-nav-left">
-	  <button id="logo-btn" type="button" class="btn btn-default" aria-label="Left Align" onclick="toggleHeader();" >
-	    <img src="img/mold-logo.png" width="80px" height="30px;">
-	  </button>
+	    <button id="logo-btn" type="button" class="btn btn-default" aria-label="Left Align">
+	      <a data-toggle="tab" href="#about" onclick="refreshAbout()">
+		<img src="img/mold-logo.png" width="80px" height="30px;">
+	      </a>
+	    </button>
 	</li>
 
 	<li><a data-toggle="tab" href="#about" onclick="refreshAbout()">About</a></li>
-	<li class="active"><a data-toggle="tab" href="#query" onclick="hideHeader()">Query</a></li>
-	<li><a data-toggle="tab" href="#browse" onclick="hideHeader()">Browse</a></li>
-	<li><a data-toggle="tab" href="#relfinder" onclick="hideHeader()">Relfinder</a></li>
-	<li style="margin-right: 30px !important;"><a data-toggle="tab" href="#api" onclick="hideHeader()">API</a></li>
+	<li class="active"><a data-toggle="tab" href="#query">Query</a></li>
+	<li><a data-toggle="tab" href="#browse">Browse</a></li>
+	<li><a data-toggle="tab" href="#relfinder">Relfinder</a></li>
+	<li style="margin-right: 30px !important;"><a data-toggle="tab" href="#api">API</a></li>
 
 	<li class="span-nav-right">
 	  <div id="sb-search" class="sb-search">
@@ -68,13 +61,23 @@
 	</li>
 
       </ul>
-      
+
       <div class="tab-content fade in active">
-	
+
 	<div id="about"
 	     class="tab-pane fade"
 	     style="padding:25px;">
-	  
+
+	  <div>
+	    <h2 style="text-align: center">
+	      <img src="img/mold-logo.png" width="200px">
+	    </h2>
+	    <p style="text-align: center;">
+	      The Model Organism Linked Database
+	    </p>
+	    <br>
+	  </div>
+
 	  <dl class="dl-horizontal">
 	    <dt><u>About</u></dt>
 	    <dd>
@@ -82,9 +85,9 @@
               The primary data sources are the respective organisms' <a href="http://intermine.org">Intermine</a> endpoint, but
               MOLD is also linked with other LOD datasets from <a href="http://bio2rdf.org">Bio2RDF</a> and reuses ontologies such as <a href="http://geneontology.org/">Gene Ontology (GO)</a> and <a href="http://www.sequenceontology.org/">Sequence Ontology (SO)</a>.
 	    </dd>
-	    
+
 	    <br>
-	    
+
 	    <dt><u>Social activity</u></dt>
 	    <dd></dd>
 
@@ -149,7 +152,7 @@
 	  
 	</div>
 	
-	
+
 	<div id="query" class="tab-pane fade in active">
 	  
 	  <div style="height:40px; margin-top: 5px;">
