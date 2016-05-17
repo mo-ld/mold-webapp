@@ -160,7 +160,7 @@
         <!-- <linkURI>http://xmlns.com/foaf/0.1/homepage</linkURI> -->
         <!-- <linkURI>http://xmlns.com/foaf/0.1/page</linkURI> -->
       </linkURIs>
-      <maxRelationLength>2</maxRelationLength>
+      <maxRelationLength>3</maxRelationLength>
     </endpoint>
 
     <endpoint>
