@@ -81,9 +81,8 @@
 	  <dl class="dl-horizontal">
 	    <dt><u>About</u></dt>
 	    <dd>
-	      MOLD is an effort to publish Model Organism Data as 5 &#9733; Open Linked Data.
-              The primary data sources are the respective organisms' <a href="http://intermine.org">Intermine</a> endpoint, but
-              MOLD is also linked with other LOD datasets from <a href="http://bio2rdf.org">Bio2RDF</a> and reuses ontologies such as <a href="http://geneontology.org/">Gene Ontology (GO)</a> and <a href="http://www.sequenceontology.org/">Sequence Ontology (SO)</a>.
+	      MOLD is an effort to publish Model Organism Data as <a href="http://5stardata.info/en/">5 &#9733; Open Linked Data</a>.
+              MOLD is drawn from the respective organisms' <a href="http://intermine.org">InterMine</a> instance, and is also linked with other LOD datasets from <a href="http://bio2rdf.org">Bio2RDF</a> and reuses ontologies such as <a href="http://geneontology.org/">Gene Ontology (GO)</a> and <a href="http://www.sequenceontology.org/">Sequence Ontology (SO)</a>.
 	    </dd>
 
 	    <br>
@@ -188,7 +187,7 @@
 			
 			<!-- Wrapper for slides TODO populate dynamically... -->
 			<div class="carousel-inner" role="listbox">
-			  
+
 			  <div class="item active" onclick="loadQuery('exquery-001')">
 			    <img src="img/spin.gif" onload="this.onload=null; this.src=loadImg('exquery-001');" width="460" height="345" />
 			    <div class="carousel-caption">
@@ -196,7 +195,7 @@
 			      <p>This query will selected the orthologous genes between yeast and human via PantherDB.</p>
 			    </div>
 			  </div>
-			  
+
 			  <div class="item" onclick="loadQuery('exquery-002')">
 			    <img src="img/spin.gif" onload="this.onload=null; this.src=loadImg('exquery-002');" width="460" height="345" />
 			    <div class="carousel-caption">
@@ -241,19 +240,19 @@
 	</div>
 	
 	<div id="browse" class="tab-pane fade">
-	  <iframe id="virtuosoiframe" src="" style="width:100%;height:800px;border:0px;"></iframe>	  
+	  <iframe id="virtuosoiframe" src="" frameborder="0" class="iframeFull"></iframe>
 	</div>
 	
 	<div id="relfinder" class="tab-pane fade">
-          <iframe id="relfinderiframe" src="relfinder.html" style="width:100%;height:800px;border:0px;"></iframe>
+          <iframe id="relfinderiframe" src="relfinder.html" frameborder="0" class="iframeFull"></iframe>
 	</div>
 	
 	<div id="api" class="tab-pane fade">
-	  <iframe id="swaggeriframe" src="swagger-api.html" style="width:100%;height:800px;border:0px;"></iframe>
+	  <iframe id="swaggeriframe" src="swagger-api.html" frameborder="0" class="iframeFull"></iframe>
 	</div>
-	
+
       </div>
-      
+
     </div>
     
     <!-- YASGUI lib -->
