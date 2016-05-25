@@ -12,7 +12,7 @@ var loadImg = function(query) {
 var queries = {
   'exquery-001': {
     'img': 'img/exquery/exquery-001.png',
-    'queryURL': "#query=PREFIX+mine_vocab%3A+%3Chttp%3A%2F%2Fmo-ld.org%2Fmine_vocabulary%3A%3E%0ASELECT+COUNT+DISTINCT+%3FpantherOrtholog%0AWHERE+%7B%0A++%7B%0A++++GRAPH+%3Chttp%3A%2F%2Fhuman.mo-ld.org%3E+%7B%0A++++++%3Fshuman+skos%3AexactMatch+%3FpantherOrtholog+.%0A++++++%3Fshuman+mine_vocab%3AhasDataSource+%3Fdatasource+.%0A++++++%3Fdatasource+rdfs%3Alabel+%3Fdslabel+.%0A++++++FILTER+(lcase(str(%3Fdslabel))+%3D+%22panther%22)%0A++++%7D%0A++++GRAPH+%3Chttp%3A%2F%2Fyeast.mo-ld.org%3E+%7B%0A++++++%3Fsyeast+skos%3AexactMatch+%3FpantherOrtholog+.%0A++++%7D%0A++%7D%0A%7D%0A"
+    'queryURL': "#query=PREFIX+mine_vocab%3A+%3Chttp%3A%2F%2Fmo-ld.org%2Fmine_vocabulary%3A%3E%0ASELECT+(COUNT+(DISTINCT+%3FpantherOrtholog)+as+%3Fortholog_count)%0AWHERE+%7B%0A++%7B%0A++++GRAPH+%3Chttp%3A%2F%2Fhuman.mo-ld.org%3E+%7B%0A++++++%3Fshuman+skos%3AexactMatch+%3FpantherOrtholog+.%0A++++++%3Fshuman+mine_vocab%3AhasDataSource+%3Fdatasource+.%0A++++++%3Fdatasource+rdfs%3Alabel+%3Fdslabel+.%0A++++++FILTER+(lcase(str(%3Fdslabel))+%3D+%22panther%22)%0A++++%7D%0A++++GRAPH+%3Chttp%3A%2F%2Fyeast.mo-ld.org%3E+%7B%0A++++++%3Fsyeast+skos%3AexactMatch+%3FpantherOrtholog+.%0A++++%7D%0A++%7D%0A%7D%0A"
   },
   'exquery-002': {
     'img': 'img/exquery/exquery-002.png',
