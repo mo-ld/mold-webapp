@@ -12,7 +12,6 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-
     <script type="text/javascript">
       window.paceOptions = {
         ajax: false,
@@ -55,7 +54,10 @@
 	  <div id="sb-search" class="sb-search">
 	    <form class="searchbox" id="mysearch" onsubmit="return false;">
 	      <input id="myinput" placeholder="Quick Search.." name="search" class="searchbox-input">
-	      <span class="searchbox-icon"><img src="img/search-ico.png"/></span>
+	      <span class="searchbox-icon">
+		<img id="searchload" src="img/ajax-loader.gif" style="z-index:20">
+		<img src="img/search-ico.png"/>
+	      </span>
 	    </form>
 	  </div>
 	</li>

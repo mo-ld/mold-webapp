@@ -63,6 +63,7 @@ var autocomplete = new autoComplete({
   source: function(term, suggest){
     term = term.toLowerCase();
     try { xhr.abort(); } catch(e){}
+    $("#searchload").show();
     xhr = $.ajax({
       url: api_url + '/v1/search?q=' + term,
       type: 'GET',
@@ -83,8 +84,11 @@ var autocomplete = new autoComplete({
             if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
           suggest(suggestions);
         }
+        $("#searchload").hide();
       })
-      .error(function(){ })
+      .error(function(){
+        $("#searchload").hide();
+      })
   },
   onSelect: function(e, term, item){
     $('.searchbox-input').val(item.getAttribute('data-val'));
@@ -183,6 +187,7 @@ $(document).ready(function(){
   $("#main_tabs a[href='#about']").tab("show");
   $('#virtuosoiframe').attr('src', fct_url);
   load_search();
+  $("#searchload").hide();
   window.setTimeout(function (){
     load_mold_network();
   }, 1000);
