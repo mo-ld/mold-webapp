@@ -330,6 +330,25 @@ body:not(.pace-done):after {
   text-decoration:none;
 }
 
+.iframeFull {
+    width: 1140px;
+    margin:0 auto;
+    height: 95%;
+    position: absolute;
+}
+
+#mold_loading {
+    width: 600px;
+    height: 50px;
+    background: url('../img/spin.gif') no-repeat;
+}
+
+.query_example {
+    padding: 3px;
+    background: lightsalmon;
+    cursor: pointer;
+}
+
 /* Caroussel Query examples */
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
@@ -345,17 +364,4 @@ body:not(.pace-done):after {
 .carousel-caption p {
     width: 70%;
     margin: 0 auto;
-}
-
-.iframeFull {
-    width: 1140px;
-    margin:0 auto;
-    height: 95%;
-    position: absolute;
-}
-
-#mold_loading {
-    width: 600px;
-    height: 50px;
-    background: url('../img/spin.gif') no-repeat;
 }

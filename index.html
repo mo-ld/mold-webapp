@@ -169,62 +169,106 @@
 		    <button type="button" class="close" data-dismiss="modal">&times;</button>
 		    <h4 class="modal-title" style="text-align:center"><b>Query Examples</b></h4>
 		  </div>
+
 		  <div class="modal-body">
 
 		    <div class="container-modal">
 
 		      <br>
 
-		      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-			<!-- Indicators -->
+		      <div class="panel panel-default">
 
-			<ol class="carousel-indicators">
-			  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			  <li data-target="#myCarousel" data-slide-to="1"></li>
-			  <li data-target="#myCarousel" data-slide-to="2"></li>
-			  <li data-target="#myCarousel" data-slide-to="3"></li>
-			</ol>
+			<!-- Default panel contents -->
+			<div class="panel-heading"><b>By Model Organism</b> - Remove the GRAPH clause for pan-organism query (6 MODs at once)</div>
+			<!-- <div class="panel-body"> -->
+			<!--   <p></p> -->
+			<!-- </div> -->
 
-			<!-- Wrapper for slides TODO populate dynamically... -->
-			<div class="carousel-inner" role="listbox">
-
-			  <div class="item active" onclick="loadQuery('exquery-001')">
-			    <img src="img/spin.gif" onload="this.onload=null; this.src=loadImg('exquery-001');" width="460" height="345" />
-			    <div class="carousel-caption">
-			      <h3>Select Orthologous genes - yeast/human</h3>
-			      <p>This query will selected the orthologous genes between yeast and human via PantherDB.</p>
-			    </div>
-			  </div>
-
-			  <div class="item" onclick="loadQuery('exquery-002')">
-			    <img src="img/spin.gif" onload="this.onload=null; this.src=loadImg('exquery-002');" width="460" height="345" />
-			    <div class="carousel-caption">
-			      <h3>Federated Query</h3>
-			      <p>Federated Query with Bio2RDF:KEGG to fetch pathway information from mouse
-				genes annotated as GO:0019898 (extrinsic components of a cell membrane).</p>
-			    </div>
-			  </div>
-
-			</div>
-
-			<!-- Left and right controls -->
-			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-			  <!-- <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> -->
-			  <span><h1>&lArr;</h1></span>
-			  <span class="sr-only">Previous</span>
-			</a>
-			<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-			  <!-- <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> -->
-			  <span><h1>&rArr;</h1></span>
-			  <span class="sr-only">Next</span>
-			</a>
+			<!-- Table -->
+			<table class="table">
+			  <thead>
+			    <th><u>Query Type</u></th>
+			    <th>Yeast</th>
+			    <th>Zebrafish</th>
+			    <th>Fly</th>
+			    <th>Rat</th>
+			    <th>Mouse</th>
+			    <th>Human</th>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <td><b>All Resource Types</b></td>
+			      <td><button onclick="loadQuery('subject-type','yeast')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('subject-type','zebrafish')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('subject-type','fly')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('subject-type','rat')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('subject-type','mouse')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('subject-type','human')"><img src="img/select.png"/></button></td>
+			    </tr>
+			    <tr>
+			      <td><b>CrossReferences</b></td>
+			      <td><button onclick="loadQuery('crossreference-datasource','yeast')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('crossreference-datasource','zebrafish')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('crossreference-datasource','fly')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('crossreference-datasource','rat')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('crossreference-datasource','mouse')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('crossreference-datasource','human')"><img src="img/select.png"/></button></td>
+			    </tr>
+			    <tr>
+			      <td><b>Ontologies</b></td>
+			      <td><button onclick="loadQuery('ontology-source','yeast')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('ontology-source','zebrafish')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('ontology-source','fly')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('ontology-source','rat')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('ontology-source','mouse')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('ontology-source','human')"><img src="img/select.png"/></button></td>
+			    </tr>
+			    <tr>
+			      <td><b>Genes - GO annotation <br> (GO:0005515 = 'protein binding')</b></td>
+			      <td><button onclick="loadQuery('gene-go','yeast')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('gene-go','zebrafish')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('gene-go','fly')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('gene-go','rat')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('gene-go','mouse')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('gene-go','human')"><img src="img/select.png"/></button></td>
+			    </tr>
+			    <tr>
+			      <td><b>Genes - Disease</b></td>
+			      <td><button onclick="loadQuery('gene-disease','yeast')"><img src="img/select.png"/></button></td>
+			      <td></td>
+			      <td><button onclick="loadQuery('gene-disease','fly')"><img src="img/select.png"/></button></td>
+			      <td></td>
+			      <td></td>
+			      <td><button onclick="loadQuery('gene-disease','human')"><img src="img/select.png"/></button></td>
+			    </tr>
+			    <tr>
+			      <td><b>Genes - Pathway</b></td>
+			      <td><button onclick="loadQuery('gene-pathway','yeast')"><img src="img/select.png"/></button></td>
+			      <td></td>
+			      <td><button onclick="loadQuery('gene-pathway','fly')"><img src="img/select.png"/></button></td>
+			      <td></td>
+			      <td></td>
+			      <td><button onclick="loadQuery('gene-pathway','human')"><img src="img/select.png"/></button></td>
+			    </tr>
+			    <tr>
+			      <td><b>Interaction Genes - Genes</b></td>
+			      <td><button onclick="loadQuery('interaction-gene-gene','yeast')"><img src="img/select.png"/></button></td>
+			      <td></td>
+			      <td><button onclick="loadQuery('interaction-gene-gene','fly')"><img src="img/select.png"/></button></td>
+			      <td></td>
+			      <td><button onclick="loadQuery('interaction-gene-gene','mouse')"><img src="img/select.png"/></button></td>
+			      <td><button onclick="loadQuery('interaction-gene-gene','human')"><img src="img/select.png"/></button></td>
+			    </tr>
+			  </tbody>
+			</table>
 		      </div>
+
 		    </div>
 
 		  </div>
 
 		  <div class="modal-footer">
-		    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		    <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
 		  </div>
 		</div>
 
