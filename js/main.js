@@ -206,6 +206,7 @@ var refreshAbout = function() {
 
 /* YASQE & YASR SPARQL */
 var yasqe = YASQE(document.getElementById("yasqe"), {
+  createShareLink: null,
   sparql: {
     showQueryButton: true,
     endpoint: sparql_url,
