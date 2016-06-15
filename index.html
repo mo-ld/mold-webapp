@@ -48,6 +48,7 @@
 	<li class="active"><a data-toggle="tab" href="#query">Query</a></li>
 	<li><a data-toggle="tab" href="#browse">Browse</a></li>
 	<li><a data-toggle="tab" href="#relfinder">Relfinder</a></li>
+	<li><a data-toggle="tab" href="#ldf">Fragments</a></li>
 	<li style="margin-right: 30px !important;"><a data-toggle="tab" href="#api">API</a></li>
 
 	<li class="span-nav-right">
@@ -248,6 +249,45 @@
 	<div id="relfinder" class="tab-pane fade">
           <iframe id="relfinderiframe" src="relfinder.html" frameborder="0" class="iframeFull"></iframe>
 	</div>
+
+  <div id="ldf" class="tab-pane fade">
+    <h3>Fragments-based access</h3>
+    <p>
+      Query the MOLD datasets in your browser
+      through the light-weight <a href="http://linkeddatafragments.org/" target="_blank">Triple Pattern Fragments interface</a>.
+    </p>
+    <p>
+      Alternatively, you can browse the <a href="#" id="ldf-link">MOLD fragments interface</a> manually.
+    </p>
+    <fieldset class="ldf-client">
+      <ul>
+        <li>
+          <label>Datasets:</label>
+          <select class="datasources" multiple></select>
+        </li>
+
+        <li>
+          <label>Query:</label>
+          <textarea class="queryText"></textarea>
+        </li>
+
+        <li>
+          <label>Example queries:</label>
+          <select class="query"></select>
+        </li>
+
+        <li>
+          <button class="btn btn-default start">Execute query</button>
+          <button class="btn btn-default stop" style="display:none">Stop execution</button>
+        </li>
+
+        <li>
+          <label>Results:</label>
+          <pre class="results"></pre>
+        </li>
+      </ul>
+    </fieldset>
+	</div>
 	
 	<div id="api" class="tab-pane fade">
 	  <iframe id="swaggeriframe" src="swagger-api.html" frameborder="0" class="iframeFull"></iframe>
@@ -272,6 +312,10 @@
     <!-- SIGMA lib -->
     <script src="js/sigma.min.js"></script>
     <script src="js/sigma.parsers.gexf.min.js"></script>
+
+    <!-- Linked Data Fragments -->
+    <script src="js/ldf-client.min.js"></script>
+    <link href="css/ldf-client.css" rel="stylesheet">
     
     <script src="js/main.js"></script>
     

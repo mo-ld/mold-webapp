@@ -2,6 +2,7 @@
 var host=location.hostname + (location.port ? ':'+location.port: '');
 var full_url=window.location.href;
 var virtuoso_url = "http://vt." + host;
+var ldf_url = "http://ldf." + host;
 var api_url = "http://api." + host;
 var sparql_url = virtuoso_url + "/sparql";
 var fct_url = virtuoso_url + "/fct";
@@ -222,3 +223,23 @@ var queryCallback =   function () {
 }
 //link both together
 yasqe.options.sparql.callbacks.complete = queryCallback();
+
+// Linked Data Fragments query client
+jQuery2(function ($) {
+  var datasources = 'Fly,Human,Mouse,Rat,Yeast,Zebrafish'.split(',')
+      .map(function (dataset) {
+        return { 'name': dataset, url: ldf_url + '/' + dataset.toLowerCase() };
+      });
+  var settings = {
+    datasources: datasources,
+    selectedDatasources: datasources.map(function (d) { return d.url; }),
+    queries: [
+      { name: 'Show 100 triples',
+        sparql: 'CONSTRUCT WHERE {\n  ?s ?p ?o.\n}\nLIMIT 100', },
+      { name: 'Show 10 types',
+        sparql: 'SELECT DISTINCT ?type WHERE {\n  ?subject a ?type.\n}\nLIMIT 10', },
+    ],
+  };
+  $('.ldf-client').queryui(settings);
+  $('#ldf-link').attr('href', ldf_url);
+});
