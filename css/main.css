@@ -7,6 +7,12 @@
     background-color: rgba(255, 255, 255, 1);
 }
 
+.collapsed-menu {
+    text-align: right;
+    padding: 0;
+    margin-right: 30px !important;
+}
+
 .tab-pane {
     margin-top: 45px;
 }
@@ -331,10 +337,13 @@ body:not(.pace-done):after {
 }
 
 .iframeFull {
-    width: 1140px;
-    margin:0 auto;
+    width: 95%;
+    max-width: 1140px;
     height: 95%;
     position: absolute;
+    left:0; 
+    right:0;
+    margin: auto;
 }
 
 #mold_loading {
