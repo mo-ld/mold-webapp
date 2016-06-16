@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+  
   <head>
     <title>MOLD</title>
     <meta name="author" content="whois" charset="utf-8">
@@ -8,10 +8,10 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet"/>
-
+    
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
+    
     <script type="text/javascript">
       window.paceOptions = {
         ajax: false,
@@ -22,33 +22,37 @@
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
+    
     <link href="css/auto-complete.css" rel="stylesheet"/>
     <script src="js/auto-complete.min.js"></script>
-
+    
     <script src="js/exquery.js"></script>
-
+    
   </head>
 
   <body>
 
     <div class="container">
 
-      <ul class="nav nav-tabs fixed" style="text-align:right;" id="main_tabs">
+      <img id="menu" src="img/menu.png" style="display: none; width:35px; position:absolute; top:0; right:0; cursor:pointer;" onclick="toggleMenu()"/>
+
+      <ul id="menu_tabs" class="nav nav-tabs" style="text-align:right; list-style-type: none;" id="main_tabs">
 
 	<li class="span-nav-left">
-	    <button id="logo-btn" type="button" class="btn btn-default" aria-label="Left Align">
-	      <a data-toggle="tab" href="#about" onclick="refreshAbout()">
-		<img src="img/mold-logo.png" width="80px" height="30px;">
-	      </a>
-	    </button>
+	  <button id="logo-btn" type="button" class="btn btn-default" aria-label="Left Align">
+	    <a data-toggle="tab" href="#about" onclick="refreshAbout()">
+	      <img src="img/mold-logo.png" width="80px" height="30px;">
+	    </a>
+	  </button>
 	</li>
 
 	<li><a data-toggle="tab" href="#about" onclick="refreshAbout()">About</a></li>
 	<li class="active"><a data-toggle="tab" href="#query">Query</a></li>
 	<li><a data-toggle="tab" href="#browse">Browse</a></li>
 	<li><a data-toggle="tab" href="#relfinder">Relfinder</a></li>
-	<li style="margin-right: 30px !important;"><a data-toggle="tab" href="#api">API</a></li>
+	<li><a data-toggle="tab" href="#ldf">Fragments</a></li>
+	<!-- <li style="margin-right: 30px !important;"><a data-toggle="tab" href="#api">API</a></li> -->
+	<li><a data-toggle="tab" href="#api">API</a></li>
 
 	<li class="span-nav-right">
 	  <div id="sb-search" class="sb-search">
@@ -61,15 +65,15 @@
 	    </form>
 	  </div>
 	</li>
-
+	
       </ul>
-
+      
       <div class="tab-content fade in active">
-
+	
 	<div id="about"
 	     class="tab-pane fade"
 	     style="padding:25px;">
-
+	  
 	  <div>
 	    <h2 style="text-align: center">
 	      <img src="img/mold-logo.png" width="200px">
@@ -79,19 +83,19 @@
 	    </p>
 	    <br>
 	  </div>
-
+	  
 	  <dl class="dl-horizontal">
 	    <dt><u>About</u></dt>
 	    <dd>
 	      MOLD is an effort to publish Model Organism Data as <a href="http://5stardata.info/en/">5 &#9733; Open Linked Data</a>.
               MOLD is drawn from the respective organisms' <a href="http://intermine.org">InterMine</a> instance, and is also linked with other LOD datasets from <a href="http://bio2rdf.org">Bio2RDF</a> and reuses ontologies such as <a href="http://geneontology.org/">Gene Ontology (GO)</a> and <a href="http://www.sequenceontology.org/">Sequence Ontology (SO)</a>.
 	    </dd>
-
+	    
 	    <br>
-
+	    
 	    <dt><u>Social activity</u></dt>
 	    <dd></dd>
-
+	    
 	    <dt><b>GitHub</b></dt>
 	    <dd><a href="https://github.com/mo-ld" target="_blank">https://github.com/mo-ld
 		<img src="img/github-ico.png" alt="Code" height="30px" style="margin-left:1em"/> </a>
@@ -103,87 +107,87 @@
 	    <dd><a href="https://groups.google.com/forum/#!forum/mo-ld" target="_blank">https://groups.google.com/forum/#!forum/mo-ld
 		<img src="img/google-ico.png" alt="Forum" height="30px" style="margin-left:1em"/> </a></dd>
 	    <br>
-
+	    
 	    <dt><u>MOLD Network</u></dt>
 	    <dd>
-		<div id="mold_sigma"  style="height:600px; width:100%; margin 0;"></div>
+	      <div id="mold_sigma"  style="height:600px; width:100%; margin 0;"></div>
 	    </dd>
-
+	    
 	    <dt><u>Model Organisms</u></dt>
 	    <dd></dd>
-
+	    
 	    <dt> Yeast </dt>
 	    <dd><i>Saccharomyces cerevisiae</i> is a species of yeast. It is perhaps the most useful yeast, having been instrumental to winemaking, baking, and brewing since ancient times. It is believed to have been originally isolated from the skin of grapes (one can see the yeast as a component of the thin white film on the skins of some dark-color fruits such as plums; it exists among the waxes of the cuticle). (source: <a href="http://dbpedia.org/page/Saccharomyces_cerevisiae">dbpedia</a> ) <br>
 	      <b>YeatMine:</b> <a href="http://yeastmine.yeastgenome.org">http://yeastmine.yeastgenome.org</a>
 	    </dd>
-
+	    
 	    <!-- <dt> Worm </dt> -->
 	    <!-- <dd>Caenorhabditis elegans /ˌseɪnɵræbˈdɪtɪs ˈɛlɛɡænz/ is a free-living (not parasitic), transparent nematode (roundworm), about 1 mm in length, that lives in temperate soil environments. The name is a blend of Greek (caeno- - recent, rhabditis - rod-like) and Latin (elegans - elegant). In 1900, Maupas initially named it Rhabditides elegans, Osche placed it in the subgenus Caenorhabditis in 1952, and in 1955, Dougherty raised it to the status of genus.C. (source: <a href="http://dbpedia.org/page/Caenorhabditis_elegans"> dbpedia</a> ) <br> -->
 	    <!--   <b>WormMine:</b> <a href="http://intermine.wormbase.org/">http://intermine.wormbase.org/</a> -->
 	    <!-- </dd> -->
-
+	    
 	    <dt> Zebrafish </dt>
 	    <dd>The zebrafish (<i>Danio rerio</i>) is a tropical freshwater fish belonging to the minnow family (<i>Cyprinidae</i>) of the order <i>Cypriniformes</i>. Native to the Himalayan region, it is a popular aquarium fish, frequently sold under the trade name zebra danio. The zebrafish is also an important and widely-used vertebrate model organism in scientific research, and was the first vertebrate to be cloned. (source: <a href="http://dbpedia.org/page/Zebrafish">dbpedia</a> ) <br>
 	      <b>ZebrafishMine:</b> <a href="http://www.zebrafishmine.org/">http://www.zebrafishmine.org/</a>
 	    </dd>
-
+	    
 	    <dt>Fly</dt>
 	    <dd><i>Drosophila melanogaster</i> is a species of fly (the taxonomic order <i>Diptera</i>) in the family <i>Drosophilidae</i>. The species is known generally as the common fruit fly or vinegar fly. Starting with Charles W. Woodworth's proposal of the use of this species as a model organism, <i>D. melanogaster</i> continues to be widely used for biological research in studies of genetics, physiology, microbial pathogenesis, and life history evolution. (source: <a href="http://dbpedia.org/page/Drosophila_melanogaster">dbpedia</a> ) <br>
 	      <b>FlyMine:</b> <a href="http://www.flymine.org/">http://www.flymine.org/</a>
 	    </dd>
-
+	    
 	    <dt>Rat</dt>
 	    <dd>The brown rat, also referred to as common rat, street rat, sewer rat, Hanover rat, Norway rat, brown Norway rat, Norwegian rat, or wharf rat (<i>Rattus norvegicus</i>) is one of the best known and most common rats. One of the largest muroids, it is a brown or grey rodent with a body up to 25 cm (10 in) long, and a similar tail length; the male weighs on average 350 g (12 oz) and the female 250 g (9 oz). (source: <a href="http://dbpedia.org/page/Brown_rat">dbpedia</a> ) <br>
 	      <b>RatMine:</b> <a href="http://www.ratmine.org/">http://www.ratmine.org/</a>
 	    </dd>
-
+	    
 	    <dt>Mouse</dt>
 	    <dd>The house mouse (<i>Mus musculus</i>) is a small mammal of the order <i>Rodentia</i>, characteristically having a pointed snout, small rounded ears, and a long naked or almost hairless tail. It is one of the most numerous species of the genus <i>Mus</i>. Although a wild animal, the house mouse mainly lives in association with humans. The house mouse has been domesticated as the pet or fancy mouse, and as the laboratory mouse, which is one of the most important model organisms in biology and medicine. (source: <a href="http://dbpedia.org/page/House_mouse">dbpedia</a> ) <br>
 	      <b>MouseMine:</b> <a href="http://www.mousemine.org/mousemine/">http://www.mousemine.org/mousemine/</a>
 	    </dd>
-
+	    
 	    <dt>Human</dt>
 	    <dd><i>Homo sapiens</i> (Latin: "wise man") is the binomial nomenclature (also known as the scientific name) for the human species. <i>Homo</i> is the human genus, which also includes Neanderthals and many other extinct species of hominid; <i>H. sapiens</i> is the only surviving species of the genus <i>Homo</i>. Modern humans are the subspecies <i>Homo sapiens sapiens</i>, which differentiates them from what has been argued to be their direct ancestor, <i>Homo sapiens idaltu</i>. (source: <a href="http://dbpedia.org/page/Homo_sapiens">dbpedia</a> ) <br>
 	      <b>HumanMine:</b> <a href="http://www.humanmine.org/">http://www.humanmine.org/</a>
 	    </dd>
-
+	    
 	  </dl>
-
+	  
 	</div>
-
-
+	
+	
 	<div id="query" class="tab-pane fade in active">
-
+	  
 	  <div style="height:40px; margin-top: 5px;">
-
+	    
 	    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#queryexample">Query Example</button>
-
+	    
 	    <!-- Modal -->
 	    <div id="queryexample" class="modal fade" role="dialog">
-
+	      
 	      <div class="modal-dialog modal-lg">
-
+		
 		<!-- Modal content-->
 		<div class="modal-content">
 		  <div class="modal-header">
 		    <button type="button" class="close" data-dismiss="modal">&times;</button>
 		    <h4 class="modal-title" style="text-align:center"><b>Query Examples</b></h4>
 		  </div>
-
+		  
 		  <div class="modal-body">
-
+		    
 		    <div class="container-modal">
-
+		      
 		      <br>
-
+		      
 		      <div class="panel panel-default">
-
+			
 			<!-- Default panel contents -->
 			<div class="panel-heading"><b>By Model Organism</b> - Remove the GRAPH clause for pan-organism query (6 MODs at once)</div>
 			<!-- <div class="panel-body"> -->
 			<!--   <p></p> -->
 			<!-- </div> -->
-
+			
 			<!-- Table -->
 			<table class="table">
 			  <thead>
@@ -262,27 +266,27 @@
 			  </tbody>
 			</table>
 		      </div>
-
+		      
 		    </div>
-
+		    
 		  </div>
-
+		  
 		  <div class="modal-footer">
 		    <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
 		  </div>
 		</div>
-
+		
 	      </div>
 	    </div>
-
+	    
 	  </div>
-
+	  
 	  <!-- <div id="queryer"></div> -->
 	  <div id="yasqe"></div>
 	  <div id="yasr"></div>
-
+	  
 	</div>
-
+	
 	<div id="browse" class="tab-pane fade">
 	  <iframe id="virtuosoiframe" src="" frameborder="0" class="iframeFull"></iframe>
 	</div>
@@ -290,13 +294,53 @@
 	<div id="relfinder" class="tab-pane fade">
 	  <iframe id="relfinderiframe" src="relfinder.html" frameborder="0" class="iframeFull"></iframe>
 	</div>
-
+	
+	<div id="ldf" class="tab-pane fade">
+	  <h3>Fragments-based access</h3>
+	  <p>
+	    Query the MOLD datasets in your browser
+	    through the light-weight <a href="http://linkeddatafragments.org/" target="_blank">Triple Pattern Fragments interface</a>.
+	  </p>
+	  <p>
+	    Alternatively, you can browse the <a href="#" id="ldf-link">MOLD fragments interface</a> manually.
+	  </p>
+	  <fieldset class="ldf-client">
+	    <ul>
+              <li>
+		<label>Datasets:</label>
+		<select class="datasources" multiple></select>
+              </li>
+	      
+              <li>
+		<label>Query:</label>
+		<textarea class="queryText"></textarea>
+              </li>
+	      
+              <li>
+		<label>Example queries:</label>
+		<select class="query"></select>
+              </li>
+	      
+              <li>
+		<button class="btn btn-default start">Execute query</button>
+		<button class="btn btn-default stop" style="display:none">Stop execution</button>
+              </li>
+	      
+              <li>
+		<label>Results:</label>
+		<pre class="results"></pre>
+              </li>
+	    </ul>
+	  </fieldset>
+	  
+	</div>
+	
 	<div id="api" class="tab-pane fade">
 	  <iframe id="swaggeriframe" src="swagger-api.html" frameborder="0" class="iframeFull"></iframe>
 	</div>
-
+	
       </div>
-
+      
     </div>
 
     <!-- YASGUI lib -->
@@ -315,8 +359,12 @@
     <script src="js/sigma.min.js"></script>
     <script src="js/sigma.parsers.gexf.min.js"></script>
 
+    <!-- Linked Data Fragments -->
+    <script src="js/ldf-client.min.js"></script>
+    <link href="css/ldf-client.css" rel="stylesheet">
+
     <script src="js/main.js"></script>
-
+      
   </body>
-
+  
 </html>
