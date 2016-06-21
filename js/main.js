@@ -94,7 +94,7 @@ var autocomplete = new autoComplete({
   onSelect: function(e, term, item){
     $('.searchbox-input').val(item.getAttribute('data-val'));
     $('#virtuosoiframe').attr('src', describe_url+"/?url="+labels_uri[item.getAttribute('data-val')])
-    $("#main_tabs a[href='#browse']").tab("show");
+    $("#menu_tabs a[href='#browse']").tab("show");
     // hideHeader();
     window.setTimeout(function (){
       $('.searchbox-icon').click();
@@ -182,18 +182,6 @@ var refresh_mold_network = function() {
     })
 }
 
-// hack to load yasqe correctly :
-//    first tab is query the move to about tab
-$(document).ready(function(){
-  $("#main_tabs a[href='#about']").tab("show");
-  $('#virtuosoiframe').attr('src', fct_url);
-  load_search();
-  $("#searchload").hide();
-  window.setTimeout(function (){
-    load_mold_network();
-  }, 1000);
-})
-
 var queryExecuted = false;
 var refreshAbout = function() {
   // showHeader()
@@ -269,6 +257,16 @@ $( window ).on('resize',function(){
   checkupWidth();
   console.log();
 })
-$( window ).ready(function(){
+
+// hack to load yasqe correctly :
+//    first tab is query the move to about tab
+$(document).ready(function(){
+  $("#menu_tabs a[href='#about']").tab("show");
+  $('#virtuosoiframe').attr('src', fct_url);
+  load_search();
+  $("#searchload").hide();
+  window.setTimeout(function (){
+    load_mold_network();
+  }, 1000);
   checkupWidth();
-}) 
+})
