@@ -1,9 +1,9 @@
 /* host */
 var host=location.hostname + (location.port ? ':'+location.port: '');
 var full_url=window.location.href;
-var virtuoso_url = "http://vt." + host;
-var ldf_url = "http://ldf." + host;
-var api_url = "http://api." + host;
+var virtuoso_url = location.protocol+"//vt." + host;
+var ldf_url = location.protocol+"//ldf." + host;
+var api_url = location.protocol+"//api." + host;
 var sparql_url = virtuoso_url + "/sparql";
 var fct_url = virtuoso_url + "/fct";
 var describe_url = virtuoso_url + "/describe";
